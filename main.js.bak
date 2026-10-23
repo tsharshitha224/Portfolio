@@ -1,0 +1,743 @@
+/**
+ * ==========================================================================
+ * HARSHITHA SURESH — BESPOKE CREATIVE DEVELOPER & DESIGNER JAVASCRIPT
+ * Engines:
+ * 1. Meet Vora Preloader (0-100% counter & kinetic typography)
+ * 2. Tim Quirino Hero Interactive Particle Celestial Canvas
+ * 3. Dual Cursors: Tim Quirino (Hero) & Meet Vora Morphing (Other sections)
+ * 4. Zhenya Rynzhuk Color Collision Transition
+ * 5. Creative Works (Canva & Figma) Filter & Lightbox Modal
+ * 6. Meet Vora Tactile Orbit Wheel Experience
+ * 7. Filterable Achievements System
+ * 8. Meet Vora Email Copy Tool & Thibaut Crépelle Mechanical Keyboard
+ * ==========================================================================
+ */
+
+(function () {
+  'use strict';
+
+  // --- Web Audio Tactile Synthesizer ---
+  let audioCtx = null;
+  let soundEnabled = true;
+
+  function initAudio() {
+    if (!audioCtx) {
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (AudioContextClass) {
+        audioCtx = new AudioContextClass();
+      }
+    }
+    if (audioCtx && audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+  }
+
+  function playKeyClickSound(pitchFactor = 1.0) {
+    if (!soundEnabled) return;
+    try {
+      initAudio();
+      if (!audioCtx) return;
+
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(320 * pitchFactor, audioCtx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(80, audioCtx.currentTime + 0.04);
+
+      gain.gain.setValueAtTime(0.18, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.05);
+    } catch (e) {}
+  }
+
+  function playWhooshSound() {
+    if (!soundEnabled) return;
+    try {
+      initAudio();
+      if (!audioCtx) return;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(160, audioCtx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(420, audioCtx.currentTime + 0.14);
+
+      gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.16);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.16);
+    } catch (e) {}
+  }
+
+  // --- 1. Meet Vora Preloader ---
+  function initPreloader() {
+    const preloader = document.getElementById('preloader');
+    const counterEl = document.getElementById('preloader-count');
+    const barEl = document.getElementById('preloader-bar');
+    if (!preloader || !counterEl || !barEl) return;
+
+    let progress = 0;
+    const interval = setInterval(() => {
+      progress += Math.floor(Math.random() * 5) + 2;
+      if (progress >= 100) {
+        progress = 100;
+        clearInterval(interval);
+
+        counterEl.textContent = '100';
+        barEl.style.width = '100%';
+
+        setTimeout(() => {
+          if (window.gsap) {
+            gsap.to(preloader, {
+              yPercent: -100,
+              duration: 1.1,
+              ease: 'power4.inOut',
+              onComplete: () => {
+                preloader.style.display = 'none';
+                initHeroAnimations();
+              }
+            });
+          } else {
+            preloader.style.transform = 'translateY(-100%)';
+            preloader.style.transition = 'transform 0.9s cubic-bezier(0.16, 1, 0.3, 1)';
+            setTimeout(() => { preloader.style.display = 'none'; }, 900);
+          }
+        }, 320);
+      } else {
+        counterEl.textContent = progress < 10 ? '0' + progress : progress;
+        barEl.style.width = progress + '%';
+      }
+    }, 25);
+  }
+
+  function initHeroAnimations() {
+    if (!window.gsap) return;
+    gsap.from('.hero-meta-top', { opacity: 0, y: -20, duration: 0.8, ease: 'power2.out' });
+    gsap.from('.hero-title-main', { opacity: 0, y: 50, duration: 1.2, delay: 0.2, ease: 'power3.out' });
+    gsap.from('.hero-tagline-motto', { opacity: 0, y: 30, duration: 1, delay: 0.4, ease: 'power2.out' });
+    gsap.from('.hero-statement-grid', { opacity: 0, y: 40, duration: 1, delay: 0.6, ease: 'power2.out' });
+  }
+
+  // --- 2. Tim Quirino Hero Celestial Particle Canvas ---
+  function initHeroParticles() {
+    const canvas = document.getElementById('hero-particles-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    const particles = [];
+    const totalParticles = 45;
+    let mouse = { x: width / 2, y: height / 2 };
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    for (let i = 0; i < totalParticles; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        radius: Math.random() * 2.2 + 0.8,
+        color: Math.random() > 0.4 ? 'rgba(125, 38, 58, ' : 'rgba(37, 34, 31, ',
+        alpha: Math.random() * 0.4 + 0.15,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5
+      });
+    }
+
+    function renderParticles() {
+      ctx.clearRect(0, 0, width, height);
+
+      particles.forEach((p, idx) => {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0) p.x = width;
+        if (p.x > width) p.x = 0;
+        if (p.y < 0) p.y = height;
+        if (p.y > height) p.y = 0;
+
+        // Subtle attraction to mouse
+        const dx = mouse.x - p.x;
+        const dy = mouse.y - p.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 180) {
+          p.x += (dx / dist) * 0.3;
+          p.y += (dy / dist) * 0.3;
+        }
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = p.color + p.alpha + ')';
+        ctx.fill();
+
+        // Connect nearby particles with delicate faint lines
+        for (let j = idx + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const d2 = Math.hypot(p.x - p2.x, p.y - p2.y);
+          if (d2 < 110) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = `rgba(125, 38, 58, ${0.12 * (1 - d2 / 110)})`;
+            ctx.lineWidth = 0.7;
+            ctx.stroke();
+          }
+        }
+      });
+
+      requestAnimationFrame(renderParticles);
+    }
+    renderParticles();
+  }
+
+  // --- 3. Custom Cursors ---
+  function initCursors() {
+    const dot = document.getElementById('cursor-dot');
+    const follower = document.getElementById('cursor-follower');
+    const cursorText = document.getElementById('cursor-text');
+    const heroSection = document.getElementById('hero');
+
+    if (!dot || !follower) return;
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let followerX = mouseX;
+    let followerY = mouseY;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+    });
+
+    function renderFollower() {
+      followerX += (mouseX - followerX) * 0.18;
+      followerY += (mouseY - followerY) * 0.18;
+      follower.style.transform = `translate(${followerX}px, ${followerY}px)`;
+
+      if (heroSection) {
+        const heroRect = heroSection.getBoundingClientRect();
+        const isInHero = heroRect.top <= 0 && heroRect.bottom >= 100;
+
+        if (isInHero) {
+          if (!follower.classList.contains('hover-override')) {
+            follower.classList.remove('cursor-meetvora');
+            cursorText.textContent = '';
+            dot.style.opacity = '1';
+          }
+        } else {
+          if (!follower.classList.contains('hover-override')) {
+            follower.classList.add('cursor-meetvora');
+            if (!cursorText.textContent) {
+              cursorText.textContent = 'EXPLORE';
+            }
+          }
+        }
+      }
+
+      requestAnimationFrame(renderFollower);
+    }
+    requestAnimationFrame(renderFollower);
+
+    // Contextual Hover triggers
+    const hoverElements = document.querySelectorAll('[data-cursor]');
+    hoverElements.forEach((el) => {
+      el.addEventListener('mouseenter', () => {
+        const action = el.getAttribute('data-cursor') || 'VIEW';
+        follower.classList.add('cursor-meetvora', 'hover-override');
+        cursorText.textContent = action;
+        dot.style.opacity = '0';
+      });
+
+      el.addEventListener('mouseleave', () => {
+        follower.classList.remove('cursor-meetvora', 'hover-override');
+        cursorText.textContent = '';
+        dot.style.opacity = '1';
+      });
+    });
+
+    // Magnetic buttons
+    const magnetics = document.querySelectorAll('[data-magnetic]');
+    magnetics.forEach((btn) => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const btnX = e.clientX - rect.left - rect.width / 2;
+        const btnY = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translate(${btnX * 0.3}px, ${btnY * 0.3}px)`;
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate(0px, 0px)';
+      });
+    });
+  }
+
+  // --- 4. Zhenya Rynzhuk Color Collision Transition ---
+  function initCollisionTransitions() {
+    const overlay = document.getElementById('collision-overlay');
+    const sphereBurgundy = document.querySelector('.sphere-burgundy');
+    const sphereCharcoal = document.querySelector('.sphere-charcoal');
+    const veil = document.querySelector('.collision-veil');
+
+    if (!overlay || !sphereBurgundy || !sphereCharcoal || !veil) return;
+
+    window.triggerCollisionTransition = function (targetUrlOrSection, callback) {
+      overlay.style.display = 'flex';
+      playWhooshSound();
+
+      if (window.gsap) {
+        const tl = gsap.timeline({
+          onComplete: () => {
+            if (typeof callback === 'function') callback();
+            if (typeof targetUrlOrSection === 'string') {
+              if (targetUrlOrSection.startsWith('#')) {
+                const targetEl = document.querySelector(targetUrlOrSection);
+                if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+              } else if (targetUrlOrSection) {
+                window.location.href = targetUrlOrSection;
+              }
+            }
+
+            gsap.to([sphereBurgundy, sphereCharcoal], {
+              scale: 0,
+              opacity: 0,
+              duration: 0.4,
+              ease: 'power2.in'
+            });
+            gsap.to(veil, {
+              opacity: 0,
+              duration: 0.45,
+              delay: 0.15,
+              onComplete: () => {
+                overlay.style.display = 'none';
+                gsap.set([sphereBurgundy, sphereCharcoal], {
+                  scale: 1,
+                  opacity: 1,
+                  left: -200,
+                  right: -200
+                });
+              }
+            });
+          }
+        });
+
+        tl.set(veil, { opacity: 0 })
+          .to(sphereBurgundy, { left: 'calc(50% - 100px)', duration: 0.55, ease: 'back.in(1.2)' }, 0)
+          .to(sphereCharcoal, { right: 'calc(50% - 100px)', duration: 0.55, ease: 'back.in(1.2)' }, 0)
+          .to([sphereBurgundy, sphereCharcoal], { scaleX: 1.6, scaleY: 0.6, duration: 0.15 })
+          .to(veil, { opacity: 1, duration: 0.35 }, '-=0.1')
+          .to([sphereBurgundy, sphereCharcoal], { scale: 6, duration: 0.45 });
+      } else {
+        overlay.style.display = 'none';
+        if (typeof targetUrlOrSection === 'string' && targetUrlOrSection.startsWith('#')) {
+          const el = document.querySelector(targetUrlOrSection);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
+
+    const navAnchors = document.querySelectorAll('a.nav-link');
+    navAnchors.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          navAnchors.forEach(n => n.classList.remove('active'));
+          link.classList.add('active');
+          window.triggerCollisionTransition(href);
+        }
+      });
+    });
+  }
+
+  // --- 5. Creative Works (Canva & Figma) Filter & Lightbox Modal ---
+  function initCreativeWorks() {
+    const filterTabs = document.querySelectorAll('.creative-tab-btn');
+    const cards = document.querySelectorAll('.creative-card');
+    const modal = document.getElementById('creative-modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc = document.getElementById('modal-desc');
+    const modalClose = document.getElementById('modal-close');
+
+    if (!filterTabs.length || !cards.length) return;
+
+    // Filter logic
+    filterTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        playKeyClickSound(1.2);
+        filterTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const cat = tab.getAttribute('data-tab') || 'all';
+
+        cards.forEach((card) => {
+          const itemCat = card.getAttribute('data-creative-cat') || '';
+          if (cat === 'all' || itemCat === cat) {
+            card.style.display = 'flex';
+            if (window.gsap) {
+              gsap.fromTo(card, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.35 });
+            }
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Lightbox modal logic
+    cards.forEach((card) => {
+      card.addEventListener('click', (e) => {
+        // If clicking external figma link, allow normal navigation
+        if (e.target.closest('.creative-figma-link')) return;
+
+        const img = card.querySelector('img');
+        const title = card.querySelector('.creative-title');
+        const desc = card.querySelector('.creative-desc');
+
+        if (img && modal && modalImg) {
+          playKeyClickSound(1.4);
+          modalImg.src = img.src;
+          if (modalTitle && title) modalTitle.textContent = title.textContent;
+          if (modalDesc && desc) modalDesc.textContent = desc.textContent;
+          modal.style.display = 'flex';
+        }
+      });
+    });
+
+    if (modalClose) {
+      modalClose.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+    }
+
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.style.display = 'none';
+      });
+    }
+  }
+
+  // --- 6. Meet Vora Tactile Orbit Wheel ---
+  function initOrbitWheel() {
+    const track = document.getElementById('orbit-nodes-track');
+    const nodes = document.querySelectorAll('.tactile-node');
+    const coreBtn = document.getElementById('orbit-core');
+    const detailTitle = document.getElementById('orbit-detail-title');
+    const detailDesc = document.getElementById('orbit-detail-desc');
+    const detailBadge = document.getElementById('orbit-detail-badge');
+
+    if (!track || nodes.length === 0) return;
+
+    let currentAngle = 0;
+    let isDragging = false;
+    let startX = 0;
+    let autoRotateSpeed = 0.15;
+
+    const totalNodes = nodes.length;
+    const radius = 230;
+
+    function positionNodes() {
+      const isMobile = window.innerWidth <= 768;
+      const currentRadius = isMobile ? 125 : radius;
+
+      nodes.forEach((node, index) => {
+        const angleDeg = (index / totalNodes) * 360 + currentAngle;
+        const angleRad = (angleDeg * Math.PI) / 180;
+        const x = Math.cos(angleRad) * currentRadius;
+        const y = Math.sin(angleRad) * currentRadius;
+        node.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px)`;
+      });
+    }
+
+    function autoSpin() {
+      if (!isDragging) {
+        currentAngle = (currentAngle + autoRotateSpeed) % 360;
+        positionNodes();
+      }
+      requestAnimationFrame(autoSpin);
+    }
+    requestAnimationFrame(autoSpin);
+
+    const arena = document.getElementById('orbit-arena');
+    if (arena) {
+      arena.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX;
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const deltaX = e.clientX - startX;
+        startX = e.clientX;
+        currentAngle += deltaX * 0.4;
+        positionNodes();
+      });
+
+      window.addEventListener('mouseup', () => { isDragging = false; });
+
+      arena.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        startX = e.touches[0].clientX;
+      });
+
+      window.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const deltaX = e.touches[0].clientX - startX;
+        startX = e.touches[0].clientX;
+        currentAngle += deltaX * 0.4;
+        positionNodes();
+      });
+
+      window.addEventListener('touchend', () => { isDragging = false; });
+    }
+
+    nodes.forEach((node) => {
+      node.addEventListener('click', () => {
+        playKeyClickSound(1.4);
+        nodes.forEach(n => n.classList.remove('active'));
+        node.classList.add('active');
+
+        const role = node.getAttribute('data-role') || '';
+        const company = node.getAttribute('data-company') || '';
+        const details = node.getAttribute('data-details') || '';
+        const badge = node.getAttribute('data-badge') || 'VERIFIED EXPERIENCE';
+
+        if (detailTitle) detailTitle.textContent = `${role} — ${company}`;
+        if (detailDesc) detailDesc.textContent = details;
+        if (detailBadge) detailBadge.textContent = badge;
+      });
+    });
+
+    if (coreBtn) {
+      coreBtn.addEventListener('click', () => {
+        playKeyClickSound(1.6);
+        currentAngle = 0;
+        positionNodes();
+      });
+    }
+
+    window.addEventListener('resize', positionNodes);
+  }
+
+  // --- 7. Achievements Filter System ---
+  function initAchievementFilters() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.achievement-card');
+
+    if (!filterBtns.length || !cards.length) return;
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        playKeyClickSound(1.2);
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter') || 'all';
+
+        cards.forEach((card) => {
+          const category = card.getAttribute('data-category') || '';
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'flex';
+            if (window.gsap) {
+              gsap.fromTo(card, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.35 });
+            }
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  // --- 8. Meet Vora Email Copy Tool & Mechanical Keyboard Console ---
+  function initContactAndKeyboard() {
+    const btnCopy = document.getElementById('btn-copy-email');
+    const toast = document.getElementById('copy-toast');
+    const terminalOutput = document.getElementById('terminal-text');
+    const keycaps = document.querySelectorAll('.keycap');
+    const btnClear = document.getElementById('btn-clear-terminal');
+    const btnSend = document.getElementById('btn-send-terminal');
+
+    // 1-Click Copy Email Tool
+    if (btnCopy) {
+      btnCopy.addEventListener('click', () => {
+        playKeyClickSound(1.3);
+        const email = 'tsharshitha22@gmail.com';
+        navigator.clipboard.writeText(email).then(() => {
+          if (toast) {
+            toast.classList.add('show');
+            setTimeout(() => { toast.classList.remove('show'); }, 2500);
+          }
+        });
+      });
+    }
+
+    // Keyboard Interactive Console
+    if (!terminalOutput) return;
+
+    let message = 'Hello Harshitha, I would love to collaborate!';
+    terminalOutput.textContent = message;
+
+    function appendChar(char) {
+      if (message.length < 90) {
+        message += char;
+        terminalOutput.textContent = message;
+      }
+    }
+
+    function removeChar() {
+      message = message.slice(0, -1);
+      terminalOutput.textContent = message || '(type something on keyboard...)';
+    }
+
+    function pressKeyVisual(keyElement) {
+      if (!keyElement) return;
+      keyElement.classList.add('pressed');
+      playKeyClickSound(Math.random() * 0.4 + 0.8);
+      setTimeout(() => { keyElement.classList.remove('pressed'); }, 120);
+    }
+
+    keycaps.forEach((key) => {
+      key.addEventListener('click', () => {
+        pressKeyVisual(key);
+
+        const val = key.getAttribute('data-key');
+        const action = key.getAttribute('data-action');
+        const link = key.getAttribute('data-link');
+
+        if (link) {
+          window.open(link, '_blank');
+          return;
+        }
+
+        if (action === 'backspace') {
+          removeChar();
+        } else if (action === 'space') {
+          appendChar(' ');
+        } else if (action === 'clear') {
+          message = '';
+          terminalOutput.textContent = '(screen cleared - type your note)';
+        } else if (action === 'enter') {
+          triggerSendEmail();
+        } else if (val) {
+          if (terminalOutput.textContent.startsWith('(')) message = '';
+          appendChar(val);
+        }
+      });
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        const rect = contactSection.getBoundingClientRect();
+        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+          const pressedKeyChar = e.key.toUpperCase();
+          const targetKey = document.querySelector(`.keycap[data-key="${pressedKeyChar}"]`);
+
+          if (targetKey) {
+            pressKeyVisual(targetKey);
+            if (terminalOutput.textContent.startsWith('(')) message = '';
+            appendChar(e.key);
+          } else if (e.key === 'Backspace') {
+            const bspKey = document.querySelector('.keycap[data-action="backspace"]');
+            pressKeyVisual(bspKey);
+            removeChar();
+          } else if (e.key === ' ') {
+            const spaceKey = document.querySelector('.keycap[data-action="space"]');
+            pressKeyVisual(spaceKey);
+            appendChar(' ');
+          }
+        }
+      }
+    });
+
+    if (btnClear) {
+      btnClear.addEventListener('click', () => {
+        playKeyClickSound(0.9);
+        message = '';
+        terminalOutput.textContent = '(screen cleared)';
+      });
+    }
+
+    function triggerSendEmail() {
+      playKeyClickSound(1.5);
+      const email = 'tsharshitha22@gmail.com';
+      const subject = encodeURIComponent('Connecting via Portfolio Mechanical Terminal');
+      const body = encodeURIComponent(message || 'Hello Harshitha, lets connect!');
+      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    }
+
+    if (btnSend) {
+      btnSend.addEventListener('click', triggerSendEmail);
+    }
+  }
+
+  // --- 9. Header Controls & Live Chennai Clock ---
+  function initHeaderControls() {
+    const audioBtn = document.getElementById('audio-toggle-btn');
+    const clockEl = document.getElementById('live-clock');
+
+    if (audioBtn) {
+      audioBtn.addEventListener('click', () => {
+        soundEnabled = !soundEnabled;
+        if (soundEnabled) {
+          initAudio();
+          audioBtn.classList.add('playing');
+          audioBtn.querySelector('.audio-status').textContent = 'AUDIO ON';
+          playKeyClickSound(1.2);
+        } else {
+          audioBtn.classList.remove('playing');
+          audioBtn.querySelector('.audio-status').textContent = 'MUTE';
+        }
+      });
+    }
+
+    function updateClock() {
+      if (!clockEl) return;
+      const now = new Date();
+      const options = {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      };
+      clockEl.textContent = new Intl.DateTimeFormat('en-GB', options).format(now) + ' IST';
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  }
+
+  // --- Initialize All Systems ---
+  document.addEventListener('DOMContentLoaded', () => {
+    initPreloader();
+    initHeroParticles();
+    initCursors();
+    initCollisionTransitions();
+    initCreativeWorks();
+    initOrbitWheel();
+    initAchievementFilters();
+    initContactAndKeyboard();
+    initHeaderControls();
+  });
+
+})();

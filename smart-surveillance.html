@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIH 2023 Smart CCTV Surveillance — Harshitha Suresh Case Study</title>
+  <meta name="description" content="AI/ML powered smart surveillance system utilizing existing CCTV networks for crowd management and crime prevention by T S Harshitha.">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../css/project.css">
+</head>
+<body>
+
+  <!-- Case Study Nav -->
+  <header class="case-study-nav">
+    <a href="../index.html#projects" class="btn-back-portfolio">
+      ← Back to Portfolio
+    </a>
+    <div class="case-study-nav-title">
+      SIH 2023 Smart CCTV Surveillance // Case Study
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="case-study-hero">
+      <div class="case-badge-row">
+        <span class="case-tag">Smart India Hackathon 2023 · National Selection</span>
+        <span class="case-year">2023</span>
+      </div>
+
+      <h1 class="case-hero-title">
+        AI/ML CCTV Network for <span>Crowd Management</span> & Crime Prevention
+      </h1>
+
+      <p class="case-hero-lead">
+        An AI/ML-powered solution utilizing existing municipal and commercial CCTV infrastructure to enable real-time crowd density tracking, crime prevention, and workforce monitoring as a smart urban surveillance grid.
+      </p>
+
+      <!-- Metadata Bar -->
+      <div class="case-metadata-grid">
+        <div>
+          <div class="meta-field-label">Competition</div>
+          <div class="meta-field-val">Smart India Hackathon (SIH 2023)</div>
+        </div>
+        <div>
+          <div class="meta-field-label">Primary Stack</div>
+          <div class="meta-field-val">TensorFlow, PyTorch, YOLO, Python, Flask</div>
+        </div>
+        <div>
+          <div class="meta-field-label">Domain</div>
+          <div class="meta-field-val">Computer Vision / Public Safety / AI</div>
+        </div>
+        <div>
+          <div class="meta-field-label">Key Achievement</div>
+          <div class="meta-field-val">Selected for 2nd Round at SIH 2023</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Showcase -->
+    <div class="case-showcase-visual">
+      <div class="visual-frame">
+        <img src="../assets/images/smart-surveillance.jpg" alt="Urban Sentinel Smart CCTV Surveillance Dashboard">
+      </div>
+    </div>
+
+    <!-- Case Study Body -->
+    <article class="case-content-body">
+      <!-- Section 1 -->
+      <div class="case-section-block">
+        <div class="case-block-label">01 // Problem Space</div>
+        <h2>The Blind Spots in Urban Public Surveillance</h2>
+        <p>
+          Metropolitan cities operate tens of thousands of CCTV feeds. However, more than 95% of these cameras are passively recorded without active human monitoring due to personnel fatigue. In critical high-density junctions (railway hubs, pilgrimage sites, festival grounds), stampedes and crimes occur before security operators can manually identify the bottleneck.
+        </p>
+        <p>
+          Installing specialized AI sensors across millions of street poles is economically unviable. The challenge was: <em>Can we make existing, low-resolution RTSP CCTV cameras intelligent through edge AI algorithms without purchasing new hardware?</em>
+        </p>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="case-section-block">
+        <div class="case-block-label">02 // Deep Learning Pipeline</div>
+        <h2>Multi-Stream Object Detection & Anomaly Recognition</h2>
+        <p>
+          We engineered a modular inference pipeline capable of ingesting multiple RTSP video streams simultaneously. Frames are processed through a customized YOLOv8 architecture optimized with TensorRT for low latency.
+        </p>
+
+        <div class="case-highlight-box">
+          <h4>Key Breakthrough: Real-Time Dynamic Heatmapping</h4>
+          <p>
+            Rather than simply counting heads, our pipeline generates perspective-corrected crowd density heatmaps. When density per square meter crosses critical safety thresholds, automated audio-visual alerts are dispatched to nearby station controllers.
+          </p>
+        </div>
+
+        <ul class="case-feature-list">
+          <li><strong>Crowd Density & Chokepoint Alerts:</strong> Predicts crowd surge velocity to prevent stampedes before density becomes dangerous.</li>
+          <li><strong>Unattended Luggage & Object Detection:</strong> Spatially correlates stationary bounding boxes over time to flag suspicious abandoned bags in transit zones.</li>
+          <li><strong>Workforce & Patrol Monitoring:</strong> Verifies active security presence in assigned perimeter zones during night shifts.</li>
+          <li><strong>Centralized Operator Web Dashboard:</strong> Unified multi-camera console built with Flask/Django streaming video feeds with overlay telemetry.</li>
+        </ul>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="case-section-block">
+        <div class="case-block-label">03 // Technical Specifications</div>
+        <h2>Model Architecture & Tech Stack</h2>
+
+        <div class="tech-spec-grid">
+          <div class="tech-spec-card">
+            <h5>Computer Vision Models</h5>
+            <p>YOLO, custom CNN layers, and PyTorch transfer learning models optimized for pedestrian tracking and motion vectors.</p>
+          </div>
+          <div class="tech-spec-card">
+            <h5>Video Ingestion</h5>
+            <p>OpenCV video capture engine handling multi-threaded RTSP IP camera decoding and downsampling.</p>
+          </div>
+          <div class="tech-spec-card">
+            <h5>Server Backend</h5>
+            <p>Python with Flask & Django handling WebSocket alert streams, user permissions, and event logging.</p>
+          </div>
+          <div class="tech-spec-card">
+            <h5>Frontend UI</h5>
+            <p>Responsive multi-tile camera monitoring interface crafted in HTML5, CSS3, and JavaScript.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4 -->
+      <div class="case-section-block">
+        <div class="case-block-label">04 // Hackathon Recognition</div>
+        <h2>National Selection at SIH 2023</h2>
+        <p>
+          This engineering architecture successfully advanced to the <strong>2nd round of selection at the Smart India Hackathon 2023</strong>, praised by jury panels for backward compatibility with existing legacy CCTV camera hardware and resource-efficient inference benchmarks.
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <!-- Next Case Study Footer -->
+  <footer class="case-next-footer">
+    <div class="next-label">Next Flagship Project</div>
+    <h3>Citizen Fraud Shield — RAG AI Scam Chatbot</h3>
+    <a href="citizen-fraud-shield.html" class="btn-case-next">
+      Explore Next Case Study →
+    </a>
+  </footer>
+
+</body>
+</html>

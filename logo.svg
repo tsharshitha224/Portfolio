@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 70" width="300" height="70">
+  <!-- Minimalist Monogram Icon -->
+  <g transform="translate(10, 10)">
+    <rect width="50" height="50" rx="12" fill="#7D263A" />
+    <g fill="none" stroke="#F7F3EB" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="14" y1="13" x2="14" y2="37" />
+      <line x1="14" y1="25" x2="26" y2="25" />
+      <line x1="26" y1="13" x2="26" y2="37" />
+      <path d="M 37 17 C 37 13, 28 13, 28 19 C 28 24, 37 26, 37 31 C 37 37, 28 37, 28 33" />
+    </g>
+  </g>
+
+  <!-- Clean Typography -->
+  <text x="75" y="36" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="17" font-weight="700" letter-spacing="0.08em" fill="#25221F">HARSHITHA</text>
+  <text x="75" y="52" font-family="'Space Mono', monospace" font-size="10" font-weight="600" letter-spacing="0.18em" fill="#7D263A">SURESH</text>
+</svg>
