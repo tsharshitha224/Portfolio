@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harshitha Suresh</title>
+  <meta name="description" content="Portfolio of Harshitha Suresh (T S Harshitha) — Computer & Communication Engineer, UI/UX Designer, and Creative Technologist specializing in DLT Blockchain, Computer Vision, and RAG AI.">
+  <meta name="author" content="Harshitha Suresh">
+
+  <!-- Custom Monogram Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- GSAP Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- ======================================================================
+       CUSTOM CURSORS
+       - Hero section: Tim Quirino style (Precision dot + fluid magnetic lag)
+       - Other sections: Meet Vora style (Dynamic morphing bubble with action text)
+       ====================================================================== -->
+  <div id="cursor-dot" class="cursor-dot"></div>
+  <div id="cursor-follower" class="cursor-follower">
+    <span id="cursor-text" class="cursor-text"></span>
+  </div>
+
+  <!-- ======================================================================
+       MEET VORA PRELOADER (1-100% Counter + "Design.Create.Innovate")
+       ====================================================================== -->
+  <div id="preloader" aria-label="Website Loading">
+    <div class="preloader-header">
+      <span>HARSHITHA SURESH</span>
+      <span>2026 EDITION</span>
+    </div>
+
+    <div class="preloader-center">
+      <h2 class="preloader-kinetic-text">
+        Design.<span>Create.</span>Innovate.
+      </h2>
+      <div class="preloader-track">
+        <div id="preloader-bar" class="preloader-bar"></div>
+      </div>
+    </div>
+
+    <div class="preloader-footer">
+      <div class="preloader-counter">
+        <span id="preloader-count">00</span><span>%</span>
+      </div>
+      <div class="preloader-motto">
+        Engineering & Visual Craft
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       ZHENYA RYNZHUK COLOR COLLISION TRANSITION OVERLAY
+       Pure Color Collision & Swap (Burgundy & Charcoal)
+       ====================================================================== -->
+  <div id="collision-overlay">
+    <div class="collision-veil"></div>
+    <div class="collision-sphere sphere-burgundy"></div>
+    <div class="collision-sphere sphere-charcoal"></div>
+  </div>
+
+  <!-- ======================================================================
+       SITE HEADER & NAVIGATION
+       ====================================================================== -->
+  <header class="site-header">
+    <a href="#hero" class="brand-monogram" data-cursor="HOME" data-magnetic>
+      <img src="assets/logo-mark.svg" alt="Harshitha Suresh Logo" class="monogram-badge-img" width="38" height="38">
+      <div class="brand-info">
+        <span class="brand-name">Harshitha Suresh</span>
+      </div>
+    </a>
+
+    <nav aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link" data-cursor="ABOUT">About</a></li>
+        <li><a href="#projects" class="nav-link" data-cursor="PROJECTS">Projects</a></li>
+        <li><a href="#creative" class="nav-link" data-cursor="CRAFT">Creative Works</a></li>
+        <li><a href="#experience" class="nav-link" data-cursor="ROLES">Experience</a></li>
+        <li><a href="#achievements" class="nav-link" data-cursor="HONORS">Achievements</a></li>
+        <li><a href="#contact" class="nav-link" data-cursor="CONTACT">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button id="audio-toggle-btn" class="audio-toggle-btn playing" aria-label="Toggle Sound Effects" data-cursor="SOUND">
+        <span class="audio-wave">
+          <span class="audio-bar"></span>
+          <span class="audio-bar"></span>
+          <span class="audio-bar"></span>
+        </span>
+        <span class="audio-status">AUDIO ON</span>
+      </button>
+
+      <a href="#contact" class="btn-contact-nav" data-cursor="TALK" data-magnetic>
+        Let's Connect
+      </a>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       SECTION 1: HERO (Tim Quirino Inspired)
+       Atmospheric interactive particle canvas, "Harshitha Suresh",
+       "Design. Create. Innovate.", uncluttered editorial hierarchy
+       ====================================================================== -->
+  <section id="hero" class="hero-section">
+    <!-- Interactive Celestial Particle Canvas -->
+    <canvas id="hero-particles-canvas"></canvas>
+
+    <div class="hero-content-wrap">
+      <div class="hero-meta-top">
+        <div class="hero-location">
+          <span class="pulse-dot"></span>
+          <span>CHENNAI, INDIA · 13.0827° N, 80.2707° E</span>
+        </div>
+      </div>
+
+      <div class="hero-center-typography">
+        <h1 class="hero-title-main">
+          Harshitha <span class="italic-accent">Suresh</span>
+        </h1>
+        <div class="hero-tagline-motto">
+          Design. <span>Create.</span> Innovate.
+        </div>
+      </div>
+
+      <div class="hero-statement-grid">
+        <div class="hero-lead-text">
+          An engineer with a designer’s pulse. Crafting <strong>decentralized blockchain architectures</strong>, <strong>computer vision surveillance</strong>, and <strong>tactile digital interfaces</strong> that merge mechanical precision with human warmth.
+        </div>
+
+        <div class="hero-stats-strip">
+          <div class="stat-item">
+            <span class="stat-val">9.70</span>
+            <span class="stat-label">Engineering GPA</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">04+</span>
+            <span class="stat-label">Internships</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">15+</span>
+            <span class="stat-label">Hackathons & Honors</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Running Ticker Ribbon -->
+    <div class="hero-ticker-wrap">
+      <div class="hero-ticker">
+        <div class="ticker-item"><span>DLT CARBON PLATFORM</span><span class="ticker-bullet">✦</span></div>
+        <div class="ticker-item"><span>SIH 2023 SMART SURVEILLANCE</span><span class="ticker-bullet">✦</span></div>
+        <div class="ticker-item"><span>CITIZEN FRAUD SHIELD RAG</span><span class="ticker-bullet">✦</span></div>
+        <div class="ticker-item"><span>UI/UX DESIGN & FIGMA</span><span class="ticker-bullet">✦</span></div>
+        <div class="ticker-item"><span>FULL STACK JAVASCRIPT & JAVA</span><span class="ticker-bullet">✦</span></div>
+        <div class="ticker-item"><span>ORACLE & L&T CERTIFIED</span><span class="ticker-bullet">✦</span></div>
+        <div class="ticker-item"><span>UBA MAGIC MEMBER & GUIDE</span><span class="ticker-bullet">✦</span></div>
+        <!-- Duplicated for seamless ticker -->
+        <div class="ticker-item"><span>DLT CARBON PLATFORM</span><span class="ticker-bullet">✦</span></div>
+        <div class="ticker-item"><span>SIH 2023 SMART SURVEILLANCE</span><span class="ticker-bullet">✦</span></div>
+        <div class="ticker-item"><span>CITIZEN FRAUD SHIELD RAG</span><span class="ticker-bullet">✦</span></div>
+        <div class="ticker-item"><span>UI/UX DESIGN & FIGMA</span><span class="ticker-bullet">✦</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 2: ABOUT ME (Meet Vora Inspired)
+       ====================================================================== -->
+  <section id="about" class="about-section">
+    <div class="section-container">
+      <div class="section-editorial-header">
+        <span class="section-label">Identity & Background</span>
+        <h2 class="section-title">About <span>Me</span></h2>
+        <p class="section-subhead">
+          Bridging the structural discipline of Computer and Communication Engineering with tactile creative development.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Main Bio Card -->
+        <div class="about-narrative-card" data-cursor="STORY">
+          <div class="author-header-badge">
+            <div class="author-avatar-seal">TH</div>
+            <div class="author-title-group">
+              <h3>T S HARSHITHA</h3>
+              <p>Engineer · Product Designer · Researcher</p>
+            </div>
+          </div>
+
+          <p class="about-bio-text">
+            Hello! I'm <strong>Harshitha Suresh</strong>, currently in my pre-final year of <strong>Computer and Communication Engineering</strong> at Sri Sairam Institute of Technology, Chennai.
+          </p>
+
+          <div class="about-bio-quote">
+            "I believe code should not merely execute; it should communicate with poise and clarity. True engineering is where algorithmic rigor and tactile human emotion intersect."
+          </div>
+
+          <p class="about-bio-text">
+            On the technical side, I build distributed smart contracts (Ethereum/Solidity), real-time computer vision networks (YOLO/PyTorch), and Retrieval-Augmented Generation systems (FastAPI/Groq/ChromaDB). On the creative side, I craft brand identities, vector illustrations, and interactive UI systems in Figma and Canva, while leading marketing initiatives at TEDx and organizing departmental IEEE symposiums.
+          </p>
+
+          <!-- Polyglot Languages Bar -->
+          <div class="polyglot-block">
+            <h4 class="polyglot-title">Languages Spoken & Written</h4>
+            <div class="polyglot-pills">
+              <span class="lang-pill" data-cursor="LANG">English</span>
+              <span class="lang-pill" data-cursor="LANG">Tamil</span>
+              <span class="lang-pill" data-cursor="LANG">Telugu</span>
+              <span class="lang-pill" data-cursor="LANG">Hindi</span>
+              <span class="lang-pill" data-cursor="LANG">Japanese (日本語)</span>
+              <span class="lang-pill" data-cursor="LANG">Sourashtra</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar: Education & Skills -->
+        <div class="about-sidebar-column">
+          <!-- Education Timeline Panel -->
+          <div class="sidebar-panel" data-cursor="ACADEMICS">
+            <div class="panel-header">
+              <h4>Education</h4>
+              <span class="badge-tag">RECORD</span>
+            </div>
+
+            <div class="edu-timeline">
+              <!-- College -->
+              <div class="edu-item">
+                <span class="edu-date">OCT 2022 — MAY 2026</span>
+                <h5 class="edu-degree">B.E. Computer & Communication Engineering</h5>
+                <p class="edu-inst">Sri Sairam Institute of Technology, Chennai, Tamil Nadu</p>
+                <div class="edu-scores">
+                  <span class="score-badge highlight">Current GPA: 9.70</span>
+                  <span class="score-badge">CGPA: 8.62</span>
+                </div>
+              </div>
+
+              <!-- High School HSC -->
+              <div class="edu-item">
+                <span class="edu-date">MAY 2021 — MAY 2022</span>
+                <h5 class="edu-degree">Higher Secondary Certificate (Computer Science)</h5>
+                <p class="edu-inst">Maharishi Vidya Mandir, Chennai, Tamil Nadu</p>
+                <div class="edu-scores">
+                  <span class="score-badge">GPA: 72.2%</span>
+                </div>
+              </div>
+
+              <!-- School SSC -->
+              <div class="edu-item">
+                <span class="edu-date">MAY 2019 — MAY 2020</span>
+                <h5 class="edu-degree">Secondary School Certificate (SSC)</h5>
+                <p class="edu-inst">Maharishi Vidya Mandir, Chennai, Tamil Nadu</p>
+                <div class="edu-scores">
+                  <span class="score-badge highlight">GPA: 86.2%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Knowledge Acquired Panel -->
+          <div class="sidebar-panel" data-cursor="SKILLS">
+            <div class="panel-header">
+              <h4>Knowledge Acquired</h4>
+              <span class="badge-tag">STACK</span>
+            </div>
+
+            <div class="skills-category-group">
+              <h5 class="skill-cat-title">Full Stack & Web Development</h5>
+              <div class="skill-chips">
+                <span class="skill-chip">HTML5</span>
+                <span class="skill-chip">CSS3</span>
+                <span class="skill-chip">JavaScript (ES6+)</span>
+                <span class="skill-chip">React.js (Basics)</span>
+                <span class="skill-chip">MongoDB</span>
+                <span class="skill-chip">Node.js</span>
+                <span class="skill-chip">Express.js</span>
+              </div>
+            </div>
+
+            <div class="skills-category-group">
+              <h5 class="skill-cat-title">UI / UX Designing</h5>
+              <div class="skill-chips">
+                <span class="skill-chip">Figma</span>
+                <span class="skill-chip">Canva</span>
+                <span class="skill-chip">Adobe Photoshop</span>
+              </div>
+            </div>
+
+            <div class="skills-category-group">
+              <h5 class="skill-cat-title">Programming & Databases</h5>
+              <div class="skill-chips">
+                <span class="skill-chip">Java</span>
+                <span class="skill-chip">Python (Basics)</span>
+                <span class="skill-chip">MySQL</span>
+              </div>
+            </div>
+
+            <div class="skills-category-group">
+              <h5 class="skill-cat-title">Certifications</h5>
+              <div class="skill-chips">
+                <span class="skill-chip cert">L&T Full Stack Dev with Java</span>
+                <span class="skill-chip cert">Oracle OCI Foundations Associate</span>
+                <span class="skill-chip cert">Oracle AI Vector Search</span>
+                <span class="skill-chip cert">Oracle APEX Developer</span>
+                <span class="skill-chip cert">Oracle Redwood App</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 3: SELECTED PROJECTS (Dedicated Standalone Case Studies)
+       ====================================================================== -->
+  <section id="projects" class="projects-section">
+    <div class="section-container">
+      <div class="section-editorial-header">
+        <span class="section-label">Engineering Case Studies</span>
+        <h2 class="section-title">Selected <span>Projects</span></h2>
+        <p class="section-subhead">
+          Each project features an in-depth standalone breakdown. Click to explore architecture and benchmarks.
+        </p>
+      </div>
+
+      <div class="projects-editorial-list">
+        <!-- Project 1: Carbon Trading -->
+        <article class="project-feature-card" data-cursor="VIEW">
+          <div class="project-visual-slot">
+            <span class="project-index-pill">01 // BLOCKCHAIN</span>
+            <img src="assets/images/carbon-trading.jpg" alt="Enhanced DLT Carbon Trading Platform Dashboard" loading="lazy">
+            <div class="project-visual-overlay"></div>
+          </div>
+
+          <div class="project-details-slot">
+            <div class="project-meta-line">
+              <span class="project-category">Decentralized Finance</span>
+              <span class="project-badge-tag">DLT & Smart Contracts</span>
+            </div>
+
+            <h3 class="project-title">An Enhanced DLT - Based Carbon Trading Platform</h3>
+
+            <p class="project-description">
+              A decentralized marketplace leveraging Distributed Ledger Technology (DLT) and Ethereum Smart Contracts to enable transparent, secure, and automated carbon credit trading without predatory intermediaries.
+            </p>
+
+            <div class="tech-stack-wrap">
+              <span class="tech-tag">Ethereum</span>
+              <span class="tech-tag">Solidity</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Express.js</span>
+              <span class="tech-tag">HTML5 / CSS3</span>
+              <span class="tech-tag">JavaScript (ES6)</span>
+              <span class="tech-tag">MongoDB</span>
+            </div>
+
+            <a href="projects/carbon-trading.html" target="_blank" rel="noopener noreferrer" class="btn-open-project" data-magnetic>
+              <span>Open Case Study</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2: SIH 2023 Surveillance -->
+        <article class="project-feature-card" data-cursor="VIEW">
+          <div class="project-visual-slot">
+            <span class="project-index-pill">02 // COMPUTER VISION</span>
+            <img src="assets/images/smart-surveillance.jpg" alt="SIH 2023 Smart CCTV Surveillance Dashboard" loading="lazy">
+            <div class="project-visual-overlay"></div>
+          </div>
+
+          <div class="project-details-slot">
+            <div class="project-meta-line">
+              <span class="project-category">Smart India Hackathon 2023</span>
+              <span class="project-badge-tag">AI / ML Surveillance</span>
+            </div>
+
+            <h3 class="project-title">AI/ML CCTV Network for Crowd Management & Crime Prevention</h3>
+
+            <p class="project-description">
+              Developed an AI/ML-powered solution utilizing existing municipal CCTV infrastructure to enable real-time crowd density tracking, crime prevention, and workforce monitoring as an integrated smart surveillance system.
+            </p>
+
+            <div class="tech-stack-wrap">
+              <span class="tech-tag">TensorFlow</span>
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">YOLO</span>
+              <span class="tech-tag">CNN</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Flask / Django</span>
+              <span class="tech-tag">HTML5 / CSS3</span>
+            </div>
+
+            <a href="projects/smart-surveillance.html" target="_blank" rel="noopener noreferrer" class="btn-open-project" data-magnetic>
+              <span>Open Case Study</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3: Citizen Fraud Shield -->
+        <article class="project-feature-card" data-cursor="VIEW">
+          <div class="project-visual-slot">
+            <span class="project-index-pill">03 // GENERATIVE AI & RAG</span>
+            <img src="assets/images/fraud-shield.jpg" alt="Citizen Fraud Shield RAG Chatbot Interface" loading="lazy">
+            <div class="project-visual-overlay"></div>
+          </div>
+
+          <div class="project-details-slot">
+            <div class="project-meta-line">
+              <span class="project-category">Civic Cyber-Defense</span>
+              <span class="project-badge-tag">RAG & LLM Reasoning</span>
+            </div>
+
+            <h3 class="project-title">Citizen Fraud Shield: Real-Time Scam Analysis Chatbot</h3>
+
+            <p class="project-description">
+              A high-precision RAG-based chatbot that analyzes citizen-reported scam calls, SMS, and phishing messages in real time, returning immediate risk scoring, threat type categorization, and safety action steps via Groq and ChromaDB.
+            </p>
+
+            <div class="tech-stack-wrap">
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Groq API (Llama 3.3)</span>
+              <span class="tech-tag">ChromaDB</span>
+              <span class="tech-tag">Sentence-Transformers</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">HTML5 / JavaScript</span>
+            </div>
+
+            <a href="projects/citizen-fraud-shield.html" target="_blank" rel="noopener noreferrer" class="btn-open-project" data-magnetic>
+              <span>Open Case Study</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 4: NEW — VISUAL CRAFT & CREATIVE WORKS (Canva & Figma Works)
+       ====================================================================== -->
+  <section id="creative" class="creative-works-section">
+    <div class="section-container">
+      <div class="section-editorial-header">
+        <span class="section-label">Design & Visual Architecture</span>
+        <h2 class="section-title">Visual Craft & <span>Creative Works</span></h2>
+        <p class="section-subhead">
+          Selected brand collateral, cultural celebrations, social awareness posters, and interactive Figma UI systems. Click any piece to view high-resolution details.
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="creative-tabs-bar">
+        <button class="creative-tab-btn active" data-tab="all">All Works (10)</button>
+        <button class="creative-tab-btn" data-tab="canva">Canva & Branding</button>
+        <button class="creative-tab-btn" data-tab="figma">Figma UI Systems</button>
+        <button class="creative-tab-btn" data-tab="campaigns">Social & Campaigns</button>
+      </div>
+
+      <!-- Works Masonry Grid -->
+      <div class="creative-masonry-grid">
+        <!-- 1. New Year 2026 Stationery Scrapbook Card -->
+        <div class="creative-card" data-creative-cat="canva" data-cursor="VIEW">
+          <div class="creative-thumb-wrap">
+            <img src="assets/designs/design_work_1_1.jpg" alt="Happy New Year 2026 Aesthetic Scrapbook Card by Harshitha Suresh">
+            <span class="creative-tool-tag">Canva</span>
+          </div>
+          <div class="creative-info-body">
+            <div>
+              <span class="creative-category">Typography & Stationery</span>
+              <h4 class="creative-title">New Year 2026 Scrapbook Card</h4>
+              <p class="creative-desc">Tactile paper craft aesthetic with warm earthy tones, wax seal, antique keys, and custom typography.</p>
+            </div>
+            <span class="creative-footer-link">Inspect Artwork ⊕</span>
+          </div>
+        </div>
+
+        <!-- 2. Figma UI System 1 -->
+        <div class="creative-card" data-creative-cat="figma" data-cursor="FIGMA">
+          <div class="creative-thumb-wrap" style="background: #25221F; display: flex; align-items: center; justify-content: center; color: #F7F3EB; padding: 2rem; text-align: center;">
+            <div style="font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 0.08em; color: var(--color-burgundy-light);">FIGMA PROTOTYPE 01</div>
+            <span class="creative-tool-tag">Figma</span>
+          </div>
+          <div class="creative-info-body">
+            <div>
+              <span class="creative-category">UI / UX Prototype</span>
+              <h4 class="creative-title">Interactive Experience Architecture</h4>
+              <p class="creative-desc">End-to-end user journeys, responsive interface components, and design system tokens.</p>
+            </div>
+            <a href="https://www.figma.com/design/TqEXEzweWt5YcEhNBD6vst/Untitled--Copy-?m=auto&t=q7gwb4fCiUi0gCLK-6" target="_blank" rel="noopener noreferrer" class="creative-footer-link creative-figma-link">Open in Figma ↗</a>
+          </div>
+        </div>
+
+        <!-- 3. World Environment Day Poster -->
+        <div class="creative-card" data-creative-cat="campaigns" data-cursor="VIEW">
+          <div class="creative-thumb-wrap">
+            <img src="assets/designs/design_work_2_2.jpg" alt="World Environment Day Plantation Drive Adani Port Chennai">
+            <span class="creative-tool-tag">Canva / Illustrator</span>
+          </div>
+          <div class="creative-info-body">
+            <div>
+              <span class="creative-category">Environmental Awareness</span>
+              <h4 class="creative-title">Plantation Drive — Adani Port</h4>
+              <p class="creative-desc">Ecological campaign visual for World Environment Day promoting sustainability and tree plantation.</p>
+            </div>
+            <span class="creative-footer-link">Inspect Artwork ⊕</span>
+          </div>
+        </div>
+
+        <!-- 4. Bureau of Indian Standards (BIS) Infographic -->
+        <div class="creative-card" data-creative-cat="campaigns" data-cursor="VIEW">
+          <div class="creative-thumb-wrap">
+            <img src="assets/designs/design_work_2_3.jpg" alt="Bureau of Indian Standards LED Bulb IS16101 Quality Infographic">
+            <span class="creative-tool-tag">Canva / Vector</span>
+          </div>
+          <div class="creative-info-body">
+            <div>
+              <span class="creative-category">Standards & Quality Design</span>
+              <h4 class="creative-title">BIS Standard IS16101 Infographic</h4>
+              <p class="creative-desc">Award-winning quality awareness poster engineered for the Bureau of Indian Standards competition.</p>
+            </div>
+            <span class="creative-footer-link">Inspect Artwork ⊕</span>
+          </div>
+        </div>
+
+        <!-- 5. Figma UI System 2 -->
+        <div class="creative-card" data-creative-cat="figma" data-cursor="FIGMA">
+          <div class="creative-thumb-wrap" style="background: #25221F; display: flex; align-items: center; justify-content: center; color: #F7F3EB; padding: 2rem; text-align: center;">
+            <div style="font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 0.08em; color: var(--color-burgundy-light);">FIGMA PROTOTYPE 02</div>
+            <span class="creative-tool-tag">Figma</span>
+          </div>
+          <div class="creative-info-body">
+            <div>
+              <span class="creative-category">Mobile Product Design</span>
+              <h4 class="creative-title">Application Wireframe & Flow Kit</h4>
+              <p class="creative-desc">High-fidelity wireframes, interactive transitions, and component state variations.</p>
+            </div>
+            <a href="https://www.figma.com/design/grSRdUw5b6f9I09wKSqVtV/Untitled?m=auto&t=q7gwb4fCiUi0gCLK-6" target="_blank" rel="noopener noreferrer" class="creative-footer-link creative-figma-link">Open in Figma ↗</a>
+          </div>
+        </div>
+
+        <!-- 6. Sports Carnival Campaign -->
+        <div class="creative-card" data-creative-cat="campaigns" data-cursor="VIEW">
+          <div class="creative-thumb-wrap">
+            <img src="assets/designs/design_work_2_4.jpg" alt="Sports Carnival Campaign Association with State Development Authority of India">
+            <span class="creative-tool-tag">Canva / Photoshop</span>
+          </div>
+          <div class="creative-info-body">
+            <div>
+              <span class="creative-category">Event Promotion</span>
+              <h4 class="creative-title">Sports Carnival 2023</h4>
+              <p class="creative-desc">Official promotional visual designed in association with the State Development Authority of India.</p>
+            </div>
+            <span class="creative-footer-link">Inspect Artwork ⊕</span>
+          </div>
+        </div>
+
+        <!-- 7. Diwali Cultural Art -->
+        <div class="creative-card" data-creative-cat="canva" data-cursor="VIEW">
+          <div class="creative-thumb-wrap">
+            <img src="assets/designs/design_work_1_3.jpg" alt="Happy Diwali Festival Art by Harshitha Suresh">
+            <span class="creative-tool-tag">Canva</span>
+          </div>
+          <div class="creative-info-body">
+            <div>
+              <span class="creative-category">Festive Collateral</span>
+              <h4 class="creative-title">Happy Diwali Celebration Poster</h4>
+              <p class="creative-desc">Vibrant festive visual harmony incorporating traditional Rangoli patterns, diyas, and warm lighting.</p>
+            </div>
+            <span class="creative-footer-link">Inspect Artwork ⊕</span>
+          </div>
+        </div>
+
+        <!-- 8. Teacher's Day Editorial Art -->
+        <div class="creative-card" data-creative-cat="canva" data-cursor="VIEW">
+          <div class="creative-thumb-wrap">
+            <img src="assets/designs/design_work_2_1.jpg" alt="Happy Teachers Day Notebook Sticker Art">
+            <span class="creative-tool-tag">Canva / Digital Art</span>
+          </div>
+          <div class="creative-info-body">
+            <div>
+              <span class="creative-category">Editorial Illustration</span>
+              <h4 class="creative-title">Teacher's Day Stationery Cover</h4>
+              <p class="creative-desc">Warm wooden desk perspective featuring sticker art, gratitude quote, and educational motifs.</p>
+            </div>
+            <span class="creative-footer-link">Inspect Artwork ⊕</span>
+          </div>
+        </div>
+
+        <!-- 9. Figma Prototype 03 -->
+        <div class="creative-card" data-creative-cat="figma" data-cursor="FIGMA">
+          <div class="creative-thumb-wrap" style="background: #25221F; display: flex; align-items: center; justify-content: center; color: #F7F3EB; padding: 2rem; text-align: center;">
+            <div style="font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 0.08em; color: var(--color-burgundy-light);">FIGMA PROTOTYPE 03</div>
+            <span class="creative-tool-tag">Figma</span>
+          </div>
+          <div class="creative-info-body">
+            <div>
+              <span class="creative-category">Design System</span>
+              <h4 class="creative-title">Brand Identity & Digital Assets</h4>
+              <p class="creative-desc">Scalable typography rules, color accessibility scales, and modular user components.</p>
+            </div>
+            <a href="https://www.figma.com/design/OIzc5ceOYLdSGnbjpGQSSz/Untitled?m=auto&t=q7gwb4fCiUi0gCLK-6" target="_blank" rel="noopener noreferrer" class="creative-footer-link creative-figma-link">Open in Figma ↗</a>
+          </div>
+        </div>
+
+        <!-- 10. Janmashtami Cultural Visual -->
+        <div class="creative-card" data-creative-cat="canva" data-cursor="VIEW">
+          <div class="creative-thumb-wrap">
+            <img src="assets/designs/design_work_1_4.jpg" alt="Happy Janmashtami Krishna Illustration on Parchment">
+            <span class="creative-tool-tag">Canva / Vector</span>
+          </div>
+          <div class="creative-info-body">
+            <div>
+              <span class="creative-category">Cultural Illustration</span>
+              <h4 class="creative-title">Janmashtami Parchment Visual</h4>
+              <p class="creative-desc">Traditional decorative toran garland, Krishna illustration, butter pots, and peacock feathers.</p>
+            </div>
+            <span class="creative-footer-link">Inspect Artwork ⊕</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox Modal for Full View -->
+    <div id="creative-modal" aria-hidden="true">
+      <div class="modal-content-frame">
+        <button id="modal-close" class="modal-close-btn" aria-label="Close Preview">✕</button>
+        <img id="modal-img" class="modal-image-display" src="" alt="High resolution preview">
+        <div class="modal-caption-bar">
+          <h4 id="modal-title" style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-charcoal); margin-bottom: 0.4rem;"></h4>
+          <p id="modal-desc" style="font-size: 0.95rem; color: var(--color-charcoal-muted);"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 5: WORK, INTERNSHIPS & ACHIEVEMENTS (Meet Vora Orbit UI)
+       ====================================================================== -->
+  <section id="experience" class="tactile-section">
+    <div class="section-container">
+      <div class="section-editorial-header">
+        <span class="section-label">Professional Trajectory</span>
+        <h2 class="section-title">Roles & <span>Internships</span></h2>
+      </div>
+
+      <!-- Orbit Canvas Showcase -->
+      <div class="tactile-orbit-showcase" data-cursor="ORBIT">
+        <div class="orbit-controls-header">
+          <div class="orbit-title-group">
+            <h3>Interactive Experience Orbit</h3>
+          </div>
+        </div>
+
+        <div id="orbit-arena" class="orbit-arena">
+          <!-- Center Core -->
+          <div id="orbit-core" class="orbit-center-core" data-cursor="RESET">
+            <span class="core-label">HARSHITHA</span>
+            <span class="core-sub">Experience</span>
+            <span class="core-counter">7 NODES</span>
+          </div>
+
+          <!-- Rotating Nodes Track -->
+          <div id="orbit-nodes-track" class="orbit-nodes-track">
+            <div class="tactile-node active"
+                 data-role="Graphic Designing Intern"
+                 data-company="Codsoft"
+                 data-details="Created vector visual branding, brand communication assets, and digital marketing collateral with refined color systems."
+                 data-badge="VISUAL CRAFT">
+              <div class="node-pill">
+                <span class="node-icon">✨</span>
+                <span class="node-text">Codsoft</span>
+              </div>
+            </div>
+
+            <div class="tactile-node"
+                 data-role="Software Testing Intern"
+                 data-company="Pyroferus Pvt Ltd"
+                 data-details="Executed automated and manual test suites, regression testing, API validation, and bug lifecycles ensuring production code reliability."
+                 data-badge="QUALITY ASSURANCE">
+              <div class="node-pill">
+                <span class="node-icon">⚡</span>
+                <span class="node-text">Pyroferus Pvt Ltd</span>
+              </div>
+            </div>
+
+            <div class="tactile-node"
+                 data-role="Application Development Intern"
+                 data-company="Altrai Technologies Pvt Ltd"
+                 data-details="Developed full-stack application modules, implemented responsive UI views, and integrated backend RESTful endpoints."
+                 data-badge="APP DEVELOPMENT">
+              <div class="node-pill">
+                <span class="node-icon">💻</span>
+                <span class="node-text">Altrai Technologies</span>
+              </div>
+            </div>
+
+            <div class="tactile-node"
+                 data-role="Campus Ambassador"
+                 data-company="SmartED"
+                 data-details="Represented SmartED on campus, spearheading student outreach, educational workshops, and skill-building initiatives."
+                 data-badge="STUDENT OUTREACH">
+              <div class="node-pill">
+                <span class="node-icon">🎓</span>
+                <span class="node-text">SmartED Ambassador</span>
+              </div>
+            </div>
+
+            <div class="tactile-node"
+                 data-role="Marketing Lead"
+                 data-company="TEDx"
+                 data-details="Spearheaded promotional campaigns, digital storytelling, audience acquisition, and creative direction for flagship TEDx events."
+                 data-badge="LEADERSHIP & BRAND">
+              <div class="node-pill">
+                <span class="node-icon">🎙️</span>
+                <span class="node-text">TEDx Marketing Lead</span>
+              </div>
+            </div>
+
+            <div class="tactile-node"
+                 data-role="Symposium Organiser & Host"
+                 data-company="IEEE Day Events"
+                 data-details="Organised and hosted departmental symposiums, workshops, and technical seminars during flagship IEEE Day celebrations."
+                 data-badge="COMMUNITY ORGANISER">
+              <div class="node-pill">
+                <span class="node-icon">🌐</span>
+                <span class="node-text">IEEE Day Organiser</span>
+              </div>
+            </div>
+
+            <div class="tactile-node"
+                 data-role="MAGIC Member & Village Tech Guide"
+                 data-company="Unnat Bharat Abhiyaan (UBA) & Red Ribbon Club"
+                 data-details="Active Guide and core MAGIC member. UBA has adopted 5 rural villages where we conduct ground surveys, tree plantations, and leverage technology to eliminate grassroots difficulties."
+                 data-badge="MAGIC: MASTERMIND • ADVOCATE • GUIDE • INFLUENCER • COMMUNICATOR">
+              <div class="node-pill">
+                <span class="node-icon">🌱</span>
+                <span class="node-text">UBA & Red Ribbon Club</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Selected Detail Banner -->
+        <div class="orbit-detail-banner">
+          <div class="orbit-detail-info">
+            <h4 id="orbit-detail-title">Graphic Designing Intern — Codsoft</h4>
+            <p id="orbit-detail-desc">
+              Created vector visual branding, brand communication assets, and digital marketing collateral with refined color systems.
+            </p>
+          </div>
+          <div id="orbit-detail-badge" class="orbit-magic-badge">
+            VISUAL CRAFT
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================================================================
+           ACHIEVEMENTS SHOWCASE (Filterable Grid)
+           ================================================================== -->
+      <div id="achievements" class="achievements-grid-wrapper">
+        <div class="section-editorial-header" style="margin-bottom: 2rem;">
+          <span class="section-label">Honors & Competitions</span>
+          <h2 class="section-title">Verified <span>Achievements</span></h2>
+        </div>
+
+        <div class="achievements-filter-tabs">
+          <button class="filter-btn active" data-filter="all">All Honors (16)</button>
+          <button class="filter-btn" data-filter="hackathon">Hackathons & SDG</button>
+          <button class="filter-btn" data-filter="govt">Research & Govt Funded</button>
+          <button class="filter-btn" data-filter="leadership">Leadership & Workshops</button>
+          <button class="filter-btn" data-filter="certs">Certifications & IEEE</button>
+        </div>
+
+        <div class="achievements-cards-grid">
+          <div class="achievement-card" data-category="hackathon" data-cursor="HONOR">
+            <div class="achievement-top">
+              <span class="achievement-cat">Smart India Hackathon</span>
+              <span class="achievement-rank-pill">2nd Round Selection</span>
+            </div>
+            <h4>SIH 2023 — Smart CCTV AI Surveillance</h4>
+            <p>Selected for round 2 of national SIH 2023 for utilizing existing CCTV networks for crowd management, crime prevention, and work monitoring using AI/ML.</p>
+            <div class="achievement-footer">
+              <span>National Hackathon</span>
+              <span>2023</span>
+            </div>
+          </div>
+
+          <div class="achievement-card" data-category="hackathon" data-cursor="HONOR">
+            <div class="achievement-top">
+              <span class="achievement-cat">SDG Competitions</span>
+              <span class="achievement-rank-pill">1st Place Winner</span>
+            </div>
+            <h4>Innovathon — UN SDG Goal 13</h4>
+            <p>Secured 1st Place at Sri Sairam Institute of Technology for designing sustainable technology combating climate impact under UN SDG 13.</p>
+            <div class="achievement-footer">
+              <span>SSIT Chennai</span>
+              <span>Goal 13</span>
+            </div>
+          </div>
+
+          <div class="achievement-card" data-category="hackathon" data-cursor="HONOR">
+            <div class="achievement-top">
+              <span class="achievement-cat">SDG Competitions</span>
+              <span class="achievement-rank-pill">3rd Place</span>
+            </div>
+            <h4>Solvethon — UN SDG Goal 13</h4>
+            <p>Earned 3rd Place at Sri Sairam Institute of Technology for innovative technical frameworks targeted at sustainable environmental governance.</p>
+            <div class="achievement-footer">
+              <span>SSIT Chennai</span>
+              <span>Goal 13</span>
+            </div>
+          </div>
+
+          <div class="achievement-card" data-category="hackathon" data-cursor="HONOR">
+            <div class="achievement-top">
+              <span class="achievement-cat">Cyber Hackathon</span>
+              <span class="achievement-rank-pill">1st Prize Winner</span>
+            </div>
+            <h4>Real-Time Street Parking Management</h4>
+            <p>Awarded 1st Prize for engineering a smart, effective real-time IoT and algorithm-based management system for municipal street parking.</p>
+            <div class="achievement-footer">
+              <span>Smart Mobility</span>
+              <span>1st Prize</span>
+            </div>
+          </div>
+
+          <div class="achievement-card" data-category="govt" data-cursor="HONOR">
+            <div class="achievement-top">
+              <span class="achievement-cat">Govt of India Funded</span>
+              <span class="achievement-rank-pill">College Representative</span>
+            </div>
+            <h4>Desalination Project for Carbon-Offset Plant</h4>
+            <p>Represented college for the Government of India (GoI) funded Desalination Project engineered for carbon-offset industrial applications.</p>
+            <div class="achievement-footer">
+              <span>Funded Research</span>
+              <span>GoI Sponsored</span>
+            </div>
+          </div>
+
+          <div class="achievement-card" data-category="govt" data-cursor="HONOR">
+            <div class="achievement-top">
+              <span class="achievement-cat">Bureau of Indian Standards</span>
+              <span class="achievement-rank-pill">Winner</span>
+            </div>
+            <h4>BIS Standard Paper Presentation</h4>
+            <p>Won the prestigious Paper Presentation on national standards, quality frameworks, and technical implementation methodologies.</p>
+            <div class="achievement-footer">
+              <span>BIS Canon</span>
+              <span>Winner</span>
+            </div>
+          </div>
+
+          <div class="achievement-card" data-category="govt" data-cursor="HONOR">
+            <div class="achievement-top">
+              <span class="achievement-cat">BIS Canon 2024</span>
+              <span class="achievement-rank-pill">4th Place Designing</span>
+            </div>
+            <h4>Poster Presentation in Designing</h4>
+            <p>Recognized with 4th Place in design excellence at BIS Canon 2024 for technical communication visual poster design.</p>
+            <div class="achievement-footer">
+              <span>BIS 2024</span>
+              <span>4th Place</span>
+            </div>
+          </div>
+
+          <div class="achievement-card" data-category="leadership" data-cursor="HONOR">
+            <div class="achievement-top">
+              <span class="achievement-cat">UI/UX Workshop</span>
+              <span class="achievement-rank-pill">Grade A+</span>
+            </div>
+            <h4>Santana Dharma, Ambala Cantt</h4>
+            <p>Awarded top "A+" grade for outstanding performance in UI/UX architecture, wireframing, and interactive design methodologies.</p>
+            <div class="achievement-footer">
+              <span>Ambala Cantt</span>
+              <span>A+ Distinction</span>
+            </div>
+          </div>
+
+          <div class="achievement-card" data-category="leadership" data-cursor="HONOR">
+            <div class="achievement-top">
+              <span class="achievement-cat">Leadership</span>
+              <span class="achievement-rank-pill">Marketing Lead</span>
+            </div>
+            <h4>Yesist12 Leadership</h4>
+            <p>Led marketing strategy, team coordination, and participant acquisition campaigns for the international Yesist12 initiative.</p>
+            <div class="achievement-footer">
+              <span>International Initiative</span>
+              <span>Executive</span>
+            </div>
+          </div>
+
+          <div class="achievement-card" data-category="leadership" data-cursor="HONOR">
+            <div class="achievement-top">
+              <span class="achievement-cat">Mentorship</span>
+              <span class="achievement-rank-pill">Instructor</span>
+            </div>
+            <h4>Canva Design Workshop for Juniors</h4>
+            <p>Conducted hands-on design and visual hierarchy workshop for junior engineering peers to elevate digital presentation standards.</p>
+            <div class="achievement-footer">
+              <span>Design Mentorship</span>
+              <span>Instructor</span>
+            </div>
+          </div>
+
+          <div class="achievement-card" data-category="certs" data-cursor="HONOR">
+            <div class="achievement-top">
+              <span class="achievement-cat">NPTEL Elite</span>
+              <span class="achievement-rank-pill">Elite Distinction</span>
+            </div>
+            <h4>Software Conceptual Design & Java</h4>
+            <p>Secured NPTEL Elite certifications in Software Conceptual Design and Programming in Java with high honors.</p>
+            <div class="achievement-footer">
+              <span>IIT NPTEL</span>
+              <span>Elite</span>
+            </div>
+          </div>
+
+          <div class="achievement-card" data-category="certs" data-cursor="HONOR">
+            <div class="achievement-top">
+              <span class="achievement-cat">NPTEL Elite</span>
+              <span class="achievement-rank-pill">Secured Elite</span>
+            </div>
+            <h4>Industrial Internet of Things (IoT)</h4>
+            <p>Completed intensive Elite certified curriculum covering industrial sensors, networked architectures, and edge intelligence.</p>
+            <div class="achievement-footer">
+              <span>IIT NPTEL</span>
+              <span>Elite</span>
+            </div>
+          </div>
+
+          <div class="achievement-card" data-category="certs" data-cursor="HONOR">
+            <div class="achievement-top">
+              <span class="achievement-cat">Hardware & Architecture</span>
+              <span class="achievement-rank-pill">IIT Madras</span>
+            </div>
+            <h4>RISC - V VSD SQUADRON — IIT Madras</h4>
+            <p>Selected participant in RISC-V processor architectural training and instruction set verification organized with IIT Madras.</p>
+            <div class="achievement-footer">
+              <span>IIT Madras</span>
+              <span>RISC-V</span>
+            </div>
+          </div>
+
+          <div class="achievement-card" data-category="leadership" data-cursor="HONOR">
+            <div class="achievement-top">
+              <span class="achievement-cat">IEEE Events</span>
+              <span class="achievement-rank-pill">Lead Designer</span>
+            </div>
+            <h4>IEEE Day 2024 Designer & Active Member</h4>
+            <p>Official creative designer for IEEE Day 2024 events; active IEEE member contributing to global technology advancement events.</p>
+            <div class="achievement-footer">
+              <span>IEEE Society</span>
+              <span>2024</span>
+            </div>
+          </div>
+
+          <div class="achievement-card" data-category="certs" data-cursor="HONOR">
+            <div class="achievement-top">
+              <span class="achievement-cat">Academic Rank</span>
+              <span class="achievement-rank-pill">2nd Place</span>
+            </div>
+            <h4>2nd Place Overall PGPA Performance</h4>
+            <p>Recognized for outstanding academic merit, securing 2nd place overall for Semester PGPA across the department.</p>
+            <div class="achievement-footer">
+              <span>Department Merit</span>
+              <span>Silver Rank</span>
+            </div>
+          </div>
+
+          <div class="achievement-card" data-category="leadership" data-cursor="HONOR">
+            <div class="achievement-top">
+              <span class="achievement-cat">Department Event</span>
+              <span class="achievement-rank-pill">Key Organiser</span>
+            </div>
+            <h4>Symposium Organiser — IoT Domain</h4>
+            <p>Spearheaded planning, logistics, and presentation flow for the department symposium in the Internet of Things (IoT) domain.</p>
+            <div class="achievement-footer">
+              <span>IoT Symposium</span>
+              <span>Executive</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 6: CONTACT ME (Meet Vora Inspired + Thibaut Crépelle Keyboard)
+       Giant editorial headline, 1-click email copy pill, and 3D mechanical keyboard
+       ====================================================================== -->
+  <section id="contact" class="contact-section">
+    <div class="section-container">
+      <!-- Meet Vora Signature Big Contact Card -->
+      <div class="meetvora-contact-card" data-cursor="CONNECT">
+        <div class="meetvora-contact-badge">
+          <span class="pulse-dot"></span>
+          <span>AVAILABLE FOR 2026 ROLES & COLLABORATIONS</span>
+        </div>
+
+        <h2 class="meetvora-contact-headline">
+          Have a project in mind?<br>
+          Let’s <span>talk.</span>
+        </h2>
+
+        <p class="meetvora-contact-sub">
+          Whether you want to build cutting-edge decentralized systems, discuss computer vision intelligence, or craft memorable digital experiences, my inbox is always open.
+        </p>
+
+        <div class="meetvora-email-action-row">
+          <a href="mailto:tsharshitha22@gmail.com" class="btn-meetvora-email" data-magnetic>
+            <span>Send Direct Email ✉</span>
+          </a>
+          <button id="btn-copy-email" class="btn-copy-email" data-cursor="COPY" data-magnetic>
+            <span>tsharshitha22@gmail.com 📋</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Thibaut Crépelle Mechanical Keyboard Console Dock -->
+      <div class="keyboard-console-wrapper" data-cursor="TYPE">
+        <div class="keyboard-display-screen">
+          <div class="screen-header-bar">
+            <span>TACTILE CONSOLE // LIVE INPUT SCREEN</span>
+            <div class="screen-leds">
+              <span class="led-indicator active" title="Active Link"></span>
+              <span class="led-indicator burgundy" title="Audio Synthesizer ON"></span>
+            </div>
+          </div>
+
+          <div class="terminal-type-output">
+            <span id="terminal-text">Hello Harshitha, I would love to collaborate!</span>
+            <span class="terminal-cursor-blink"></span>
+          </div>
+
+          <div class="terminal-action-buttons">
+            <button id="btn-clear-terminal" class="btn-terminal btn-terminal-clear" data-cursor="CLEAR">Clear Screen</button>
+            <button id="btn-send-terminal" class="btn-terminal btn-terminal-send" data-cursor="SEND" data-magnetic>Send Note Via Mail ✉</button>
+          </div>
+        </div>
+
+        <!-- Tactile 3D Keycaps in Ivory & Burgundy Classic Palette -->
+        <div class="keyboard-chassis">
+          <div class="keyboard-row">
+            <button class="keycap key-special" data-link="https://linkedin.com/in/harshitha-suresh-677074261/" data-cursor="OPEN">
+              <span>💼 LINKEDIN</span>
+              <span class="sub-label">Launch</span>
+            </button>
+            <button class="keycap key-special" data-link="https://github.com/HarshithaSuresh-22" data-cursor="OPEN">
+              <span>🐙 GITHUB</span>
+              <span class="sub-label">Launch</span>
+            </button>
+            <button class="keycap key-special" data-link="mailto:tsharshitha22@gmail.com" data-cursor="OPEN">
+              <span>✉ EMAIL</span>
+              <span class="sub-label">Direct</span>
+            </button>
+            <button class="keycap key-special" data-link="https://instagram.com" data-cursor="OPEN">
+              <span>📸 INSTA</span>
+              <span class="sub-label">Social</span>
+            </button>
+            <button class="keycap key-special" data-link="tel:+917845998261" data-cursor="CALL">
+              <span>📞 CALL</span>
+              <span class="sub-label">+91 7845998261</span>
+            </button>
+          </div>
+
+          <div class="keyboard-row">
+            <button class="keycap" data-key="Q">Q</button>
+            <button class="keycap" data-key="W">W</button>
+            <button class="keycap" data-key="E">E</button>
+            <button class="keycap" data-key="R">R</button>
+            <button class="keycap" data-key="T">T</button>
+            <button class="keycap" data-key="Y">Y</button>
+            <button class="keycap" data-key="U">U</button>
+            <button class="keycap" data-key="I">I</button>
+            <button class="keycap" data-key="O">O</button>
+            <button class="keycap" data-key="P">P</button>
+            <button class="keycap key-wide" data-action="backspace">⌫ DEL</button>
+          </div>
+
+          <div class="keyboard-row">
+            <button class="keycap" data-key="A">A</button>
+            <button class="keycap" data-key="S">S</button>
+            <button class="keycap" data-key="D">D</button>
+            <button class="keycap" data-key="F">F</button>
+            <button class="keycap" data-key="G">G</button>
+            <button class="keycap" data-key="H">H</button>
+            <button class="keycap" data-key="J">J</button>
+            <button class="keycap" data-key="K">K</button>
+            <button class="keycap" data-key="L">L</button>
+            <button class="keycap key-wide key-special" data-action="enter">↵ ENTER</button>
+          </div>
+
+          <div class="keyboard-row">
+            <button class="keycap" data-key="Z">Z</button>
+            <button class="keycap" data-key="X">X</button>
+            <button class="keycap" data-key="C">C</button>
+            <button class="keycap" data-key="V">V</button>
+            <button class="keycap" data-key="B">B</button>
+            <button class="keycap" data-key="N">N</button>
+            <button class="keycap" data-key="M">M</button>
+            <button class="keycap key-space" data-action="space">SPACE</button>
+            <button class="keycap key-wide" data-action="clear">ESC</button>
+          </div>
+        </div>
+
+        <div class="direct-contact-ribbon">
+          <a href="https://linkedin.com/in/harshitha-suresh-677074261/" target="_blank" rel="noopener noreferrer" class="contact-card-link" data-cursor="VISIT" data-magnetic>
+            <div class="contact-icon-box">in</div>
+            <div class="contact-card-text">
+              <span class="contact-type">LinkedIn</span>
+              <span class="contact-handle">harshitha-suresh-677074261</span>
+            </div>
+          </a>
+
+          <a href="https://github.com/HarshithaSuresh-22" target="_blank" rel="noopener noreferrer" class="contact-card-link" data-cursor="VISIT" data-magnetic>
+            <div class="contact-icon-box">GH</div>
+            <div class="contact-card-text">
+              <span class="contact-type">GitHub</span>
+              <span class="contact-handle">HarshithaSuresh-22</span>
+            </div>
+          </a>
+
+          <a href="mailto:tsharshitha22@gmail.com" class="contact-card-link" data-cursor="MAIL" data-magnetic>
+            <div class="contact-icon-box">✉</div>
+            <div class="contact-card-text">
+              <span class="contact-type">Direct Email</span>
+              <span class="contact-handle">tsharshitha22@gmail.com</span>
+            </div>
+          </a>
+
+          <a href="tel:+917845998261" class="contact-card-link" data-cursor="CALL" data-magnetic>
+            <div class="contact-icon-box">☎</div>
+            <div class="contact-card-text">
+              <span class="contact-type">Phone</span>
+              <span class="contact-handle">+91 7845998261</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Toast Notification -->
+  <div id="copy-toast">Email copied to clipboard! 📋</div>
+
+  <!-- ======================================================================
+       FOOTER & COLOPHON
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="section-container" style="padding-top: 0; padding-bottom: 2rem;">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>Harshitha Suresh</h3>
+          <p>Design. Create. Innovate.</p>
+        </div>
+
+        <div class="footer-live-clock">
+          <div id="live-clock" class="clock-val">--:--:-- IST</div>
+          <div class="clock-label">Chennai, Tamil Nadu (Local Time)</div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          Crafted in Ivory (#F7F3EB), Burgundy (#7D263A) & Charcoal (#25221F).
+        </div>
+        <div>
+          © 2026 <strong>T S Harshitha</strong>. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+</body>
+</html>
