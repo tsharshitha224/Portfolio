@@ -1318,3 +1318,43 @@
   });
 
 })();
+
+/* =================================
+   MOBILE & TABLET NAVIGATION
+================================= */
+function initMobileMenu() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  if (!menuToggle || !navLinks) return;
+
+  function closeMenu() {
+    navLinks.classList.remove('is-open');
+    menuToggle.classList.remove('is-active');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open navigation menu');
+  }
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('is-open');
+
+    menuToggle.classList.toggle('is-active', isOpen);
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute(
+      'aria-label',
+      isOpen ? 'Close navigation menu' : 'Open navigation menu'
+    );
+  });
+
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1024) {
+      closeMenu();
+    }
+  });
+}
+
+initMobileMenu();
