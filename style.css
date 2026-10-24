@@ -2022,8 +2022,10 @@ img {
 
 .achievements-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.8rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+  align-items: stretch;
 }
 
 .achievement-card {
@@ -3341,12 +3343,7 @@ img {
   object-fit: contain;
   display: block;
 }
-.achievements-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-  width: 100%;
-}
+
 /* =================================
    MOBILE & TABLET HAMBURGER MENU
 ================================= */
