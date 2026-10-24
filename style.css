@@ -3335,7 +3335,12 @@ img {
     grid-template-columns: 1fr;
   }
 }
-
+.author-avatar-seal img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
 
 /* =================================
    MOBILE & TABLET HAMBURGER MENU
