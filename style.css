@@ -3341,21 +3341,7 @@ img {
   object-fit: contain;
   display: block;
 }
-.achievement-timeline {
-  width: 100%;
-  height: 3px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 18px;
-}
 
-.achievement-timeline-progress {
-  width: 50%;
-  height: 100%;
-  background: #ffffff;
-  border-radius: 10px;
-}
 /* =================================
    MOBILE & TABLET HAMBURGER MENU
 ================================= */
