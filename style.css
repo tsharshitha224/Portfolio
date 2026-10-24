@@ -3251,6 +3251,15 @@ img {
   transform: translateY(-4px);
 }
 
+.contact-icon-box i {
+  display: inline-block;
+  font-size: 1.5rem;
+  line-height: 1;
+  font-style: normal;
+  visibility: visible;
+  opacity: 1;
+}
+
 
 /* =================================
    MOBILE & TABLET HAMBURGER MENU
