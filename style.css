@@ -3320,3 +3320,9 @@ img {
     z-index: 9999;
   }
 }
+/* Prevent long contact links from overflowing */
+.contact-section a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  max-width: 100%;
+}
