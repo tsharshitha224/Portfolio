@@ -214,8 +214,7 @@
     const cursorText = document.getElementById('cursor-text');
     const heroSection = document.getElementById('hero');
 
-    if (!dot || !follower) return;
-
+    if (!dot || !follower || !cursorText) return;
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
     let followerX = mouseX;
@@ -238,13 +237,14 @@
 
         if (isInHero) {
           if (!follower.classList.contains('hover-override')) {
-            follower.classList.remove('cursor-meetvora');
+           follower.classList.remove('cursor-meetvora','cursor-meetvora-charcoal');
             cursorText.textContent = '';
             dot.style.opacity = '1';
           }
         } else {
           if (!follower.classList.contains('hover-override')) {
-            follower.classList.add('cursor-meetvora');
+           follower.classList.add('cursor-meetvora');
+          follower.classList.remove('cursor-meetvora-charcoal');
             if (!cursorText.textContent) {
               cursorText.textContent = 'EXPLORE';
             }
@@ -259,12 +259,16 @@
     // Contextual Hover triggers
     const hoverElements = document.querySelectorAll('[data-cursor]');
     hoverElements.forEach((el) => {
-      el.addEventListener('mouseenter', () => {
-        const action = el.getAttribute('data-cursor') || 'VIEW';
-        follower.classList.add('cursor-meetvora', 'hover-override');
-        cursorText.textContent = action;
-        dot.style.opacity = '0';
-      });
+    el.addEventListener('mouseleave', () => {
+    follower.classList.remove(
+        'cursor-meetvora',
+        'cursor-meetvora-charcoal',
+        'hover-override'
+    );
+
+    cursorText.textContent = '';
+    dot.style.opacity = '1';
+    });
 
       el.addEventListener('mouseleave', () => {
         follower.classList.remove('cursor-meetvora', 'hover-override');
