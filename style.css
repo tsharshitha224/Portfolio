@@ -103,15 +103,20 @@ img {
 /* ==========================================================================
    Custom Cursors (Tim Quirino on Hero, Meet Vora on All Other Sections)
    ========================================================================== */
+
+/* Hide the default cursor only on mouse/trackpad devices */
 @media (hover: hover) and (pointer: fine) {
-  body {
-    cursor: none;
-  }
-  a, button, input, textarea, [data-magnetic] {
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  [data-magnetic] {
     cursor: none;
   }
 }
 
+/* Small cursor dot */
 .cursor-dot {
   position: fixed;
   top: 0;
@@ -123,9 +128,14 @@ img {
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  transition: transform 0.06s ease-out, opacity 0.2s ease, width 0.3s ease, height 0.3s ease;
+  transition:
+    transform 0.06s ease-out,
+    opacity 0.2s ease,
+    width 0.3s ease,
+    height 0.3s ease;
 }
 
+/* Default: closed cursor */
 .cursor-follower {
   position: fixed;
   top: 0;
@@ -134,15 +144,24 @@ img {
   height: 34px;
   border: 1.5px solid var(--color-burgundy);
   border-radius: 50%;
+  background-color: transparent;
+  box-shadow: none;
   pointer-events: none;
   z-index: 9998;
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.16s var(--ease-out-expo), width 0.35s var(--ease-out-expo), height 0.35s var(--ease-out-expo), background-color 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.16s var(--ease-out-expo),
+    width 0.35s var(--ease-out-expo),
+    height 0.35s var(--ease-out-expo),
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
+/* Hidden label in the closed state */
 .cursor-text {
   font-family: var(--font-mono);
   font-size: 9px;
@@ -152,10 +171,13 @@ img {
   color: var(--color-ivory);
   opacity: 0;
   transform: scale(0.6);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
   pointer-events: none;
 }
 
+/* Open cursor when hovering over a design */
 .cursor-follower.cursor-meetvora {
   width: 68px;
   height: 68px;
@@ -169,10 +191,37 @@ img {
   transform: scale(1);
 }
 
+/* Charcoal variation */
 .cursor-follower.cursor-meetvora-charcoal {
   background-color: var(--color-charcoal);
   border-color: var(--color-charcoal);
 }
+
+/* Keep native cursor behavior on touch devices */
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot,
+  .cursor-follower {
+    display: none !important;
+  }
+
+  body,
+  a,
+  button,
+  input,
+  textarea {
+    cursor: auto;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .cursor-dot,
+  .cursor-follower,
+  .cursor-text {
+    transition: none;
+  }
+}
+
 
 /* ==========================================================================
    Meet Vora Preloader (0-100% + Kinetic Typography in Warm Ivory)
