@@ -1064,339 +1064,289 @@
 
   <!-- ======================================================================
        SECTION 5B: ACHIEVEMENTS & HONORS
-       ====================================================================== -->
-  <section id="achievements" class="achievements-section">
-    <div class="section-container">
-      <div class="achievements-grid-wrapper">
-        <div class="achievements-header-row" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
-          <div class="section-editorial-header" style="margin-bottom: 0;">
-            <span class="section-label">Achievements</span>
-            <h2 class="section-title">Verified <span>Achievements</span></h2>
-          </div>
-          <div class="achievements-view-toggle">
-            <button id="btn-view-fan" class="view-toggle-btn active" title="3D Turning Fan Deck">🎴 3D Fan Deck</button>
-            <button id="btn-view-grid" class="view-toggle-btn" title="Grid View">⊞ Grid View</button>
-          </div>
-        </div>
+ <div id="achievements-grid-container" class="achievements-cards-grid" style="display: none;">
 
-        <div class="achievements-filter-tabs">
-          <button class="filter-btn active" data-filter="all">All Honors (20)</button>
-          <button class="filter-btn" data-filter="bis">Patents & BIS Accolades</button>
-          <button class="filter-btn" data-filter="hackathon">National Hackathons</button>
-          <button class="filter-btn" data-filter="nptel">NPTEL Elite & Certifications</button>
-          <button class="filter-btn" data-filter="leadership">Leadership & Distinctions</button>
-        </div>
-
-        <!-- 3D Fan Turning Slides Stage (Meet Vora Inspired) -->
-        <div id="achievements-fan-stage" class="achievements-fan-stage" data-cursor="DRAG">
-          <div class="fan-stage-ambient-glow"></div>
-
-          <!-- Left / Right Navigation Arrows -->
-          <button id="fan-btn-prev" class="fan-nav-arrow fan-arrow-prev" aria-label="Previous Slide">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-          </button>
-          <button id="fan-btn-next" class="fan-nav-arrow fan-arrow-next" aria-label="Next Slide">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          </button>
-
-          <!-- The Fan Deck Container (Populated / Managed by 3D Engine) -->
-          <div id="fan-deck" class="fan-deck"></div>
-
-          <!-- Bottom HUD Bar -->
-          <div class="fan-stage-footer">
-            <div class="fan-slide-counter">
-              <span id="fan-current-num">01</span>
-              <span class="fan-counter-sep">/</span>
-              <span id="fan-total-num">20</span>
-            </div>
-            <div id="fan-active-label" class="fan-active-label">All Honors</div>
-            <div class="fan-progress-track">
-              <div id="fan-progress-bar" class="fan-progress-bar" style="width: 5%;"></div>
-            </div>
-          </div>
-        </div>
-        
-        <div id="achievements-grid-container" class="achievements-cards-grid" style="display: none;">
-          <div class="achievement-card" data-category="hackathon" data-cursor="HONOR">
-             <div id="achievements-grid-container" class="achievements-cards-grid" style="display: none;">
-          <div class="achievement-card" data-category="hackathon" data-cursor="HONOR">
-            <div class="achievement-top">
-              <span class="achievement-cat">Smart India Hackathon</span>
-              <span class="achievement-rank-pill">2nd Round Selection</span>
-            </div>
-            <h4>SIH 2023 — Smart CCTV AI Surveillance</h4>
-            <p>Selected for round 2 of national SIH 2023 for utilizing existing CCTV networks for crowd management, crime prevention, and work monitoring using AI/ML.</p>
-            <div class="achievement-footer">
-              <span>National Hackathon</span>
-              <span>2023</span>
-            </div>
-          </div>
-              
-            <div class="achievement-top">
-              <span class="achievement-cat">Smart India Hackathon</span>
-              <span class="achievement-rank-pill">2nd Round Selection</span>
-            </div>
-            <h4>SIH 2023 — Smart CCTV AI Surveillance</h4>
-            <p>Selected for round 2 of national SIH 2023 for utilizing existing CCTV networks for crowd management, crime prevention, and work monitoring using AI/ML.</p>
-            <div class="achievement-footer">
-              <span>National Hackathon</span>
-              <span>2023</span>
-            </div>
-          </div>
-
-          <div class="achievement-card" data-category="hackathon" data-cursor="HONOR">
-            
-            <div class="achievement-top">
-              <span class="achievement-cat">SDG Competitions</span>
-              <span class="achievement-rank-pill">1st Place Winner</span>
-            </div>
-            <h4>Innovathon — UN SDG Goal 13</h4>
-            <p>Secured 1st Place at Sri Sairam Institute of Technology for designing sustainable technology combating climate impact under UN SDG 13.</p>
-            <div class="achievement-footer">
-              <span>SSIT Chennai</span>
-              <span>Goal 13</span>
-            </div>
-          </div>
-
-          <div class="achievement-card" data-category="hackathon" data-cursor="HONOR">
-           
-            </div>
-            <div class="achievement-top">
-              <span class="achievement-cat">SDG Competitions</span>
-              <span class="achievement-rank-pill">3rd Place</span>
-            </div>
-            <h4>Solvethon — UN SDG Goal 13</h4>
-            <p>Earned 3rd Place at Sri Sairam Institute of Technology for innovative technical frameworks targeted at sustainable environmental governance.</p>
-            <div class="achievement-footer">
-              <span>SSIT Chennai</span>
-              <span>Goal 13</span>
-            </div>
-          </div>
-
-          <div class="achievement-card" data-category="hackathon" data-cursor="HONOR">
-            <div class="achievement-top">
-              <span class="achievement-cat">Cyber Hackathon</span>
-              <span class="achievement-rank-pill">1st Prize Winner</span>
-            </div>
-            <h4>Real-Time Street Parking Management</h4>
-            <p>Awarded 1st Prize for engineering a smart, effective real-time IoT and algorithm-based management system for municipal street parking.</p>
-            <div class="achievement-footer">
-              <span>Smart Mobility</span>
-              <span>1st Prize</span>
-            </div>
-          </div>
-
-          <div class="achievement-card" data-category="bis" data-cursor="HONOR">
-            <div class="achievement-top">
-              <span class="achievement-cat" style="color:var(--color-burgundy); font-weight:700;">Intellectual Property</span>
-              <span class="achievement-rank-pill" style="background:var(--color-burgundy); color:#fff;">Patent Granted</span>
-            </div>
-            <h4>Patented DLT Architecture for Carbon Credit Platform</h4>
-            <p>Official patent awarded for novel Distributed Ledger Technology framework, smart contract escrow mechanisms, and fraud-free cryptographic carbon credit verification.</p>
-            <div class="achievement-footer">
-              <span>Patent Granted</span>
-              <span>DLT Blockchain</span>
-            </div>
-          </div>
-
-          <div class="achievement-card" data-category="bis" data-cursor="HONOR">
-            <div class="achievement-top">
-              <span class="achievement-cat">Govt of India Funded</span>
-              <span class="achievement-rank-pill">College Representative</span>
-            </div>
-            <h4>Desalination Project for Carbon-Offset Plant</h4>
-            <p>Represented college for the Government of India (GoI) funded Desalination Project engineered for carbon-offset industrial applications.</p>
-            <div class="achievement-footer">
-              <span>Funded Research</span>
-              <span>GoI Sponsored</span>
-            </div>
-          </div>
-
-          <div class="achievement-card" data-category="bis" data-cursor="HONOR">
-            <div class="achievement-top">
-              <span class="achievement-cat">Bureau of Indian Standards</span>
-              <span class="achievement-rank-pill">Winner</span>
-            </div>
-            <h4>BIS Standard Paper Presentation</h4>
-            <p>Won the prestigious Paper Presentation on national standards, quality frameworks, and technical implementation methodologies.</p>
-            <div class="achievement-footer">
-              <span>BIS Canon</span>
-              <span>Winner</span>
-            </div>
-          </div>
-
-          <div class="achievement-card" data-category="bis" data-cursor="HONOR">
-            <div class="achievement-top">
-              <span class="achievement-cat">BIS Canon 2024</span>
-              <span class="achievement-rank-pill">4th Place Designing</span>
-            </div>
-            <h4>Poster Presentation in Designing</h4>
-            <p>Recognized with 4th Place in design excellence at BIS Canon 2024 for technical communication visual poster design.</p>
-            <div class="achievement-footer">
-              <span>BIS 2024</span>
-              <span>4th Place</span>
-            </div>
-          </div>
-
-          <div class="achievement-card" data-category="leadership" data-cursor="HONOR">
-            <div class="achievement-top">
-              <span class="achievement-cat">UI/UX Workshop</span>
-              <span class="achievement-rank-pill">Grade A+</span>
-            </div>
-            <h4>Santana Dharma, Ambala Cantt</h4>
-            <p>Awarded top "A+" grade for outstanding performance in UI/UX architecture, wireframing, and interactive design methodologies.</p>
-            <div class="achievement-footer">
-              <span>Ambala Cantt</span>
-              <span>A+ Distinction</span>
-            </div>
-          </div>
-
-          <div class="achievement-card" data-category="leadership" data-cursor="HONOR">
-            <div class="achievement-top">
-              <span class="achievement-cat">Leadership</span>
-              <span class="achievement-rank-pill">Marketing Lead</span>
-            </div>
-            <h4>Yesist12 Leadership</h4>
-            <p>Led marketing strategy, team coordination, and participant acquisition campaigns for the international Yesist12 initiative.</p>
-            <div class="achievement-footer">
-              <span>International Initiative</span>
-              <span>Executive</span>
-            </div>
-          </div>
-
-          <div class="achievement-card" data-category="leadership" data-cursor="HONOR">
-            <div class="achievement-top">
-              <span class="achievement-cat">Mentorship</span>
-              <span class="achievement-rank-pill">Instructor</span>
-            </div>
-            <h4>Canva Design Workshop for Juniors</h4>
-            <p>Conducted hands-on design and visual hierarchy workshop for junior engineering peers to elevate digital presentation standards.</p>
-            <div class="achievement-footer">
-              <span>Design Mentorship</span>
-              <span>Instructor</span>
-            </div>
-          </div>
-
-          <div class="achievement-card" data-category="nptel" data-cursor="HONOR">
-            <div class="achievement-top">
-              <span class="achievement-cat">NPTEL Elite</span>
-              <span class="achievement-rank-pill">Elite Distinction</span>
-            </div>
-            <h4>Software Conceptual Design & Java</h4>
-            <p>Secured NPTEL Elite certifications in Software Conceptual Design and Programming in Java with high honors.</p>
-            <div class="achievement-footer">
-              <span>IIT NPTEL</span>
-              <span>Elite</span>
-            </div>
-          </div>
-
-          <div class="achievement-card" data-category="nptel" data-cursor="HONOR">
-            <div class="achievement-top">
-              <span class="achievement-cat">NPTEL Elite</span>
-              <span class="achievement-rank-pill">Secured Elite</span>
-            </div>
-            <h4>Industrial Internet of Things (IoT)</h4>
-            <p>Completed intensive Elite certified curriculum covering industrial sensors, networked architectures, and edge intelligence.</p>
-            <div class="achievement-footer">
-              <span>IIT NPTEL</span>
-              <span>Elite</span>
-            </div>
-          </div>
-
-          <div class="achievement-card" data-category="nptel" data-cursor="HONOR">
-            <div class="achievement-top">
-              <span class="achievement-cat">Hardware & Architecture</span>
-              <span class="achievement-rank-pill">IIT Madras</span>
-            </div>
-            <h4>RISC - V VSD SQUADRON — IIT Madras</h4>
-            <p>Selected participant in RISC-V processor architectural training and instruction set verification organized with IIT Madras.</p>
-            <div class="achievement-footer">
-              <span>IIT Madras</span>
-              <span>RISC-V</span>
-            </div>
-          </div>
-
-          <div class="achievement-card" data-category="leadership" data-cursor="HONOR">
-            <div class="achievement-top">
-              <span class="achievement-cat">IEEE Events</span>
-              <span class="achievement-rank-pill">Lead Designer</span>
-            </div>
-            <h4>IEEE Day 2024 Designer & Active Member</h4>
-            <p>Official creative designer for IEEE Day 2024 events; active IEEE member contributing to global technology advancement events.</p>
-            <div class="achievement-footer">
-              <span>IEEE Society</span>
-              <span>2024</span>
-            </div>
-          </div>
-
-          <div class="achievement-card" data-category="nptel" data-cursor="HONOR">
-            <div class="achievement-top">
-              <span class="achievement-cat">Academic Rank</span>
-              <span class="achievement-rank-pill">2nd Place</span>
-            </div>
-            <h4>2nd Place Overall PGPA Performance</h4>
-            <p>Recognized for outstanding academic merit, securing 2nd place overall for Semester PGPA across the department.</p>
-            <div class="achievement-footer">
-              <span>Department Merit</span>
-              <span>Silver Rank</span>
-            </div>
-          </div>
-
-          <div class="achievement-card" data-category="leadership" data-cursor="HONOR">
-            <div class="achievement-top">
-              <span class="achievement-cat">Department Event</span>
-              <span class="achievement-rank-pill">Key Organiser</span>
-            </div>
-            <h4>Symposium Organiser — IoT Domain</h4>
-            <p>Spearheaded planning, logistics, and presentation flow for the department symposium in the Internet of Things (IoT) domain.</p>
-            <div class="achievement-footer">
-              <span>IoT Symposium</span>
-              <span>Executive</span>
-            </div>
-          </div>
-
-          <div class="achievement-card" data-category="leadership" data-cursor="HONOR">
-            <div class="achievement-top">
-              <span class="achievement-cat">Campus Leadership</span>
-              <span class="achievement-rank-pill">Ambassador</span>
-            </div>
-            <h4>SmartED Campus Ambassador</h4>
-            <p>Represented SmartED on campus, spearheading student outreach, educational workshops, and skill-building initiatives across engineering batches.</p>
-            <div class="achievement-footer">
-              <span>SmartED</span>
-              <span>Campus Lead</span>
-            </div>
-          </div>
-
-          <div class="achievement-card" data-category="leadership" data-cursor="HONOR">
-            <div class="achievement-top">
-              <span class="achievement-cat">Global Brand</span>
-              <span class="achievement-rank-pill">Marketing Lead</span>
-            </div>
-            <h4>TEDx Marketing Lead</h4>
-            <p>Spearheaded promotional campaigns, digital storytelling, audience acquisition, and creative direction for flagship TEDx events.</p>
-            <div class="achievement-footer">
-              <span>TEDx</span>
-              <span>Marketing Lead</span>
-            </div>
-          </div>
-
-          <div class="achievement-card" data-category="leadership" data-cursor="HONOR">
-            <div class="achievement-top">
-              <span class="achievement-cat">Social Impact & Tech</span>
-              <span class="achievement-rank-pill">Core MAGIC Member</span>
-            </div>
-            <h4>Unnat Bharat Abhiyaan (UBA) & Red Ribbon Club</h4>
-            <p>Active Guide and core MAGIC member. UBA has adopted 5 rural villages where we conduct ground surveys, tree plantations, and leverage technology to eliminate grassroots difficulties.</p>
-            <div class="achievement-footer">
-              <span>UBA & RRC</span>
-              <span>Village Tech Guide</span>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- Card 1: SIH 2023 -->
+  <div class="achievement-card" data-category="hackathon" data-cursor="HONOR">
+    <div class="achievement-top">
+      <span class="achievement-cat">Smart India Hackathon</span>
+      <span class="achievement-rank-pill">2nd Round Selection</span>
     </div>
-  </section>
+    <h4>SIH 2023 — Smart CCTV AI Surveillance</h4>
+    <p>Selected for round 2 of national SIH 2023 for utilizing existing CCTV networks for crowd management, crime prevention, and work monitoring using AI/ML.</p>
+    <div class="achievement-footer">
+      <span>National Hackathon</span>
+      <span>2023</span>
+    </div>
+  </div>
+
+  <!-- Card 2: Innovathon -->
+  <div class="achievement-card" data-category="hackathon" data-cursor="HONOR">
+    <div class="achievement-top">
+      <span class="achievement-cat">SDG Competitions</span>
+      <span class="achievement-rank-pill">1st Place Winner</span>
+    </div>
+    <h4>Innovathon — UN SDG Goal 13</h4>
+    <p>Secured 1st Place at Sri Sairam Institute of Technology for designing sustainable technology combating climate impact under UN SDG 13.</p>
+    <div class="achievement-footer">
+      <span>SSIT Chennai</span>
+      <span>Goal 13</span>
+    </div>
+  </div>
+
+  <!-- Card 3: Solvethon -->
+  <div class="achievement-card" data-category="hackathon" data-cursor="HONOR">
+    <div class="achievement-top">
+      <span class="achievement-cat">SDG Competitions</span>
+      <span class="achievement-rank-pill">3rd Place</span>
+    </div>
+    <h4>Solvethon — UN SDG Goal 13</h4>
+    <p>Earned 3rd Place at Sri Sairam Institute of Technology for innovative technical frameworks targeted at sustainable environmental governance.</p>
+    <div class="achievement-footer">
+      <span>SSIT Chennai</span>
+      <span>Goal 13</span>
+    </div>
+  </div>
+
+  <!-- Card 4: Real-Time Street Parking Management -->
+  <div class="achievement-card" data-category="hackathon" data-cursor="HONOR">
+    <div class="achievement-top">
+      <span class="achievement-cat">Cyber Hackathon</span>
+      <span class="achievement-rank-pill">1st Prize Winner</span>
+    </div>
+    <h4>Real-Time Street Parking Management</h4>
+    <p>Awarded 1st Prize for engineering a smart, effective real-time IoT and algorithm-based management system for municipal street parking.</p>
+    <div class="achievement-footer">
+      <span>Smart Mobility</span>
+      <span>1st Prize</span>
+    </div>
+  </div>
+
+  <!-- Card 5: Patented DLT Architecture -->
+  <div class="achievement-card" data-category="bis" data-cursor="HONOR">
+    <div class="achievement-top">
+      <span class="achievement-cat" style="color:var(--color-burgundy); font-weight:700;">Intellectual Property</span>
+      <span class="achievement-rank-pill" style="background:var(--color-burgundy); color:#fff;">Patent Granted</span>
+    </div>
+    <h4>Patented DLT Architecture for Carbon Credit Platform</h4>
+    <p>Official patent awarded for novel Distributed Ledger Technology framework, smart contract escrow mechanisms, and fraud-free cryptographic carbon credit verification.</p>
+    <div class="achievement-footer">
+      <span>Patent Granted</span>
+      <span>DLT Blockchain</span>
+    </div>
+  </div>
+
+  <!-- Card 6: Desalination Project -->
+  <div class="achievement-card" data-category="bis" data-cursor="HONOR">
+    <div class="achievement-top">
+      <span class="achievement-cat">Govt of India Funded</span>
+      <span class="achievement-rank-pill">College Representative</span>
+    </div>
+    <h4>Desalination Project for Carbon-Offset Plant</h4>
+    <p>Represented college for the Government of India (GoI) funded Desalination Project engineered for carbon-offset industrial applications.</p>
+    <div class="achievement-footer">
+      <span>Funded Research</span>
+      <span>GoI Sponsored</span>
+    </div>
+  </div>
+
+  <!-- Card 7: BIS Standard Paper Presentation -->
+  <div class="achievement-card" data-category="bis" data-cursor="HONOR">
+    <div class="achievement-top">
+      <span class="achievement-cat">Bureau of Indian Standards</span>
+      <span class="achievement-rank-pill">Winner</span>
+    </div>
+    <h4>BIS Standard Paper Presentation</h4>
+    <p>Won the prestigious Paper Presentation on national standards, quality frameworks, and technical implementation methodologies.</p>
+    <div class="achievement-footer">
+      <span>BIS Canon</span>
+      <span>Winner</span>
+    </div>
+  </div>
+
+  <!-- Card 8: Poster Presentation -->
+  <div class="achievement-card" data-category="bis" data-cursor="HONOR">
+    <div class="achievement-top">
+      <span class="achievement-cat">BIS Canon 2024</span>
+      <span class="achievement-rank-pill">4th Place Designing</span>
+    </div>
+    <h4>Poster Presentation in Designing</h4>
+    <p>Recognized with 4th Place in design excellence at BIS Canon 2024 for technical communication visual poster design.</p>
+    <div class="achievement-footer">
+      <span>BIS 2024</span>
+      <span>4th Place</span>
+    </div>
+  </div>
+
+  <!-- Card 9: Santana Dharma -->
+  <div class="achievement-card" data-category="leadership" data-cursor="HONOR">
+    <div class="achievement-top">
+      <span class="achievement-cat">UI/UX Workshop</span>
+      <span class="achievement-rank-pill">Grade A+</span>
+    </div>
+    <h4>Santana Dharma, Ambala Cantt</h4>
+    <p>Awarded top "A+" grade for outstanding performance in UI/UX architecture, wireframing, and interactive design methodologies.</p>
+    <div class="achievement-footer">
+      <span>Ambala Cantt</span>
+      <span>A+ Distinction</span>
+    </div>
+  </div>
+
+  <!-- Card 10: Yesist12 Leadership -->
+  <div class="achievement-card" data-category="leadership" data-cursor="HONOR">
+    <div class="achievement-top">
+      <span class="achievement-cat">Leadership</span>
+      <span class="achievement-rank-pill">Marketing Lead</span>
+    </div>
+    <h4>Yesist12 Leadership</h4>
+    <p>Led marketing strategy, team coordination, and participant acquisition campaigns for the international Yesist12 initiative.</p>
+    <div class="achievement-footer">
+      <span>International Initiative</span>
+      <span>Executive</span>
+    </div>
+  </div>
+
+  <!-- Card 11: Canva Design Workshop -->
+  <div class="achievement-card" data-category="leadership" data-cursor="HONOR">
+    <div class="achievement-top">
+      <span class="achievement-cat">Mentorship</span>
+      <span class="achievement-rank-pill">Instructor</span>
+    </div>
+    <h4>Canva Design Workshop for Juniors</h4>
+    <p>Conducted hands-on design and visual hierarchy workshop for junior engineering peers to elevate digital presentation standards.</p>
+    <div class="achievement-footer">
+      <span>Design Mentorship</span>
+      <span>Instructor</span>
+    </div>
+  </div>
+
+  <!-- Card 12: NPTEL Elite -->
+  <div class="achievement-card" data-category="nptel" data-cursor="HONOR">
+    <div class="achievement-top">
+      <span class="achievement-cat">NPTEL Elite</span>
+      <span class="achievement-rank-pill">Elite Distinction</span>
+    </div>
+    <h4>Software Conceptual Design &amp; Java</h4>
+    <p>Secured NPTEL Elite certifications in Software Conceptual Design and Programming in Java with high honors.</p>
+    <div class="achievement-footer">
+      <span>IIT NPTEL</span>
+      <span>Elite</span>
+    </div>
+  </div>
+
+  <!-- Card 13: IIoT NPTEL -->
+  <div class="achievement-card" data-category="nptel" data-cursor="HONOR">
+    <div class="achievement-top">
+      <span class="achievement-cat">NPTEL Elite</span>
+      <span class="achievement-rank-pill">Secured Elite</span>
+    </div>
+    <h4>Industrial Internet of Things (IoT)</h4>
+    <p>Completed intensive Elite certified curriculum covering industrial sensors, networked architectures, and edge intelligence.</p>
+    <div class="achievement-footer">
+      <span>IIT NPTEL</span>
+      <span>Elite</span>
+    </div>
+  </div>
+
+  <!-- Card 14: RISC - V VSD SQUADRON -->
+  <div class="achievement-card" data-category="nptel" data-cursor="HONOR">
+    <div class="achievement-top">
+      <span class="achievement-cat">Hardware &amp; Architecture</span>
+      <span class="achievement-rank-pill">IIT Madras</span>
+    </div>
+    <h4>RISC - V VSD SQUADRON — IIT Madras</h4>
+    <p>Selected participant in RISC-V processor architectural training and instruction set verification organized with IIT Madras.</p>
+    <div class="achievement-footer">
+      <span>IIT Madras</span>
+      <span>RISC-V</span>
+    </div>
+  </div>
+
+  <!-- Card 15: IEEE Day 2024 -->
+  <div class="achievement-card" data-category="leadership" data-cursor="HONOR">
+    <div class="achievement-top">
+      <span class="achievement-cat">IEEE Events</span>
+      <span class="achievement-rank-pill">Lead Designer</span>
+    </div>
+    <h4>IEEE Day 2024 Designer &amp; Active Member</h4>
+    <p>Official creative designer for IEEE Day 2024 events; active IEEE member contributing to global technology advancement events.</p>
+    <div class="achievement-footer">
+      <span>IEEE Society</span>
+      <span>2024</span>
+    </div>
+  </div>
+
+  <!-- Card 16: PGPA Performance -->
+  <div class="achievement-card" data-category="nptel" data-cursor="HONOR">
+    <div class="achievement-top">
+      <span class="achievement-cat">Academic Rank</span>
+      <span class="achievement-rank-pill">2nd Place</span>
+    </div>
+    <h4>2nd Place Overall PGPA Performance</h4>
+    <p>Recognized for outstanding academic merit, securing 2nd place overall for Semester PGPA across the department.</p>
+    <div class="achievement-footer">
+      <span>Department Merit</span>
+      <span>Silver Rank</span>
+    </div>
+  </div>
+
+  <!-- Card 17: Symposium Organiser -->
+  <div class="achievement-card" data-category="leadership" data-cursor="HONOR">
+    <div class="achievement-top">
+      <span class="achievement-cat">Department Event</span>
+      <span class="achievement-rank-pill">Key Organiser</span>
+    </div>
+    <h4>Symposium Organiser — IoT Domain</h4>
+    <p>Spearheaded planning, logistics, and presentation flow for the department symposium in the Internet of Things (IoT) domain.</p>
+    <div class="achievement-footer">
+      <span>IoT Symposium</span>
+      <span>Executive</span>
+    </div>
+  </div>
+
+  <!-- Card 18: SmartED Campus Ambassador -->
+  <div class="achievement-card" data-category="leadership" data-cursor="HONOR">
+    <div class="achievement-top">
+      <span class="achievement-cat">Campus Leadership</span>
+      <span class="achievement-rank-pill">Ambassador</span>
+    </div>
+    <h4>SmartED Campus Ambassador</h4>
+    <p>Represented SmartED on campus, spearheading student outreach, educational workshops, and skill-building initiatives across engineering batches.</p>
+    <div class="achievement-footer">
+      <span>SmartED</span>
+      <span>Campus Lead</span>
+    </div>
+  </div>
+
+  <!-- Card 19: TEDx Marketing Lead -->
+  <div class="achievement-card" data-category="leadership" data-cursor="HONOR">
+    <div class="achievement-top">
+      <span class="achievement-cat">Global Brand</span>
+      <span class="achievement-rank-pill">Marketing Lead</span>
+    </div>
+    <h4>TEDx Marketing Lead</h4>
+    <p>Spearheaded promotional campaigns, digital storytelling, audience acquisition, and creative direction for flagship TEDx events.</p>
+    <div class="achievement-footer">
+      <span>TEDx</span>
+      <span>Marketing Lead</span>
+    </div>
+  </div>
+
+  <!-- Card 20: UBA & Red Ribbon Club -->
+  <div class="achievement-card" data-category="leadership" data-cursor="HONOR">
+    <div class="achievement-top">
+      <span class="achievement-cat">Social Impact &amp; Tech</span>
+      <span class="achievement-rank-pill">Core MAGIC Member</span>
+    </div>
+    <h4>Unnat Bharat Abhiyaan (UBA) &amp; Red Ribbon Club</h4>
+    <p>Active Guide and core MAGIC member. UBA has adopted 5 rural villages where we conduct ground surveys, tree plantations, and leverage technology to eliminate grassroots difficulties.</p>
+    <div class="achievement-footer">
+      <span>UBA &amp; RRC</span>
+      <span>Village Tech Guide</span>
+    </div>
+  </div>
+
+</div>
 
   <!-- ======================================================================
        SECTION 6: CONTACT ME (Meet Vora Inspired + Thibaut Crépelle Keyboard)
