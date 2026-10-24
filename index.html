@@ -78,15 +78,30 @@
       </div>
     </a>
 
-    <nav aria-label="Main Navigation">
-      <ul class="nav-links">
-        <li><a href="#about" class="nav-link" data-cursor="ABOUT">About</a></li>
-        <li><a href="#projects" class="nav-link" data-cursor="PROJECTS">Projects</a></li>
-        <li><a href="#creative" class="nav-link" data-cursor="CRAFT">Design</a></li>
-        <li><a href="#experience" class="nav-link" data-cursor="ROLES">Experience</a></li>
-        <li><a href="#achievements" class="nav-link" data-cursor="HONORS">Achievements</a></li>
-              </ul>
-    </nav>
+    
+<nav aria-label="Main Navigation" class="main-navigation">
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about" class="nav-link" data-cursor="ABOUT">About</a></li>
+    <li><a href="#projects" class="nav-link" data-cursor="PROJECTS">Projects</a></li>
+    <li><a href="#creative" class="nav-link" data-cursor="CRAFT">Design</a></li>
+    <li><a href="#experience" class="nav-link" data-cursor="ROLES">Experience</a></li>
+    <li><a href="#achievements" class="nav-link" data-cursor="HONORS">Achievements</a></li>
+  </ul>
+</nav>
+
+<button
+  class="menu-toggle"
+  id="menu-toggle"
+  type="button"
+  aria-label="Open navigation menu"
+  aria-expanded="false"
+  aria-controls="nav-links"
+>
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
 
     <div class="header-actions">
       <button id="audio-toggle-btn" class="audio-toggle-btn playing" aria-label="Toggle Sound Effects" data-cursor="SOUND">
