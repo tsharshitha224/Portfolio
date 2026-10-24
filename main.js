@@ -1326,8 +1326,10 @@ function initMobileMenu() {
   const menuToggle = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('nav-links');
 
-  if (!menuToggle || !navLinks) return;
-
+  if (!menuToggle || !navLinks) {
+  console.error("Menu button or navigation links not found!");
+  return;
+}
   function closeMenu() {
     navLinks.classList.remove('is-open');
     menuToggle.classList.remove('is-active');
